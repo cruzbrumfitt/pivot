@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Pivot Counselling and Training</title>
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #fffdf9;
+            --brand: #2c317d;
+            --brand-soft: rgba(44, 49, 125, 0.18);
+            --brand-strong: rgba(20, 29, 87, 0.8);
+            --text: #2c317d;
+            --muted: #6d7193;
+            --shadow: 0 22px 60px rgba(38, 44, 95, 0.12);
+            --radius: 28px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-shell {
+            width: min(100%, 1970px);
+            margin: 0 auto;
+            padding: 6px 0 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 4px 22px 14px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .brand-wordmark {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 0.88;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            color: var(--brand);
+        }
+
+        .brand-wordmark strong {
+            font-size: clamp(2.35rem, 4.7vw, 3.75rem);
+            font-weight: 300;
+        }
+
+        .brand-wordmark span {
+            margin-top: 4px;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .brand-copy {
+            transform: translateY(-4px);
+            font-size: clamp(0.88rem, 1.1vw, 1.15rem);
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            line-height: 1.25;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-cluster {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 1.55vw, 28px);
+            font-size: clamp(0.88rem, 1.02vw, 1.05rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .site-nav a {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .site-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--brand);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 180ms ease;
+        }
+
+        .site-nav a.is-active::after,
+        .site-nav a:hover::after,
+        .site-nav a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        .book-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 3px solid var(--brand);
+            border-radius: 999px;
+            padding: 7px 16px 7px 7px;
+            background: rgba(255, 255, 255, 0.92);
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .book-button:hover,
+        .book-button:focus-visible {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(44, 49, 125, 0.14);
+        }
+
+        .book-icon {
+            width: 38px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--brand);
+            color: white;
+            line-height: 1;
+        }
+
+        .book-icon svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 860px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            isolation: isolate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(14, 20, 57, 0.24) 0%, rgba(14, 20, 57, 0.06) 42%, rgba(255, 255, 255, 0) 70%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.08) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-slides {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: hero-slide 18s infinite ease-in-out;
+        }
+
+        .hero-slide {
+            flex: 0 0 33.3333%;
+            height: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero-slide.slide-one {
+            background-image: url("background1.jpg");
+        }
+
+        .hero-slide.slide-two {
+            background-image: url("background2.jpg");
+            background-position: center 22%;
+        }
+
+        .hero-slide.slide-three {
+            background-image: url("background3.jpg");
+            background-position: center 24%;
+        }
+
+        .hero-triangle-strong {
+            position: absolute;
+            inset: 0 auto 0 0;
+            pointer-events: none;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            z-index: 2;
+        }
+
+        .hero-triangle-strong {
+            left: 0;
+            bottom: 0;
+            top: 0;
+            height: 100%;
+            width: clamp(420px, 39vw, 620px);
+            background: linear-gradient(180deg, rgba(33, 41, 102, 0.62), rgba(20, 29, 87, 0.64));
+        }
+
+        .hero-copy {
+            position: absolute;
+            left: clamp(38px, 4.6vw, 92px);
+            bottom: clamp(92px, 14vw, 170px);
+            max-width: 400px;
+            color: white;
+            z-index: 3;
+        }
+
+        .hero-copy p {
+            margin: 0;
+            font-size: clamp(1.35rem, 2.15vw, 2.1rem);
+            font-style: italic;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            text-wrap: balance;
+            text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .site-footer {
+            width: 100vw;
+            margin-top: 28px;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            border-radius: 36px 36px 0 0;
+            padding: 58px 42px 28px;
+            background: #2c317d;
+            color: #ffffff;
+            box-shadow: var(--shadow);
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .footer-inner {
+            width: min(100%, 1280px);
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.55fr 0.8fr 0.9fr 0.8fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .footer-brand {
+            max-width: 390px;
+        }
+
+        .footer-mark {
+            display: inline-flex;
+            flex-direction: column;
+            line-height: 0.9;
+            color: #ffffff;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-mark strong {
+            font-size: clamp(2rem, 3vw, 2.65rem);
+            font-weight: 300;
+        }
+
+        .footer-mark span {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .footer-brand p {
+            margin: 18px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.55;
+            max-width: 340px;
+        }
+
+        .footer-accreditation {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .footer-sa-logo {
+            width: 128px;
+            height: auto;
+            flex: 0 0 auto;
+        }
+
+        .footer-group h3 {
+            margin: 0 0 16px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-links a,
+        .footer-contact a,
+        .footer-contact span {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.35;
+            transition: color 180ms ease, transform 180ms ease;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible,
+        .footer-contact a:hover,
+        .footer-contact a:focus-visible {
+            color: #ffffff;
+            transform: translateX(2px);
+        }
+
+        .footer-contact {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-contact strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #ffffff;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .footer-divider {
+            height: 1px;
+            margin: 26px 0 16px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.92rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .faq-section {
+            padding: 72px 22px 60px;
+            max-width: 860px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .faq-section h2 {
+            margin: 0 0 40px;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-align: center;
+            color: var(--brand);
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(44, 49, 125, 0.07);
+            transition: box-shadow 200ms ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 28px rgba(44, 49, 125, 0.13);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--brand);
+            letter-spacing: 0.01em;
+            line-height: 1.35;
+        }
+
+        .faq-question:focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: -2px;
+        }
+
+        .faq-chevron {
+            flex: 0 0 auto;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--brand);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            transition: transform 260ms ease;
+        }
+
+        .faq-chevron svg {
+            width: 10px;
+            height: 10px;
+            stroke: var(--brand);
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 260ms ease;
+        }
+
+        .faq-item.is-open .faq-chevron svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 280ms ease;
+        }
+
+        .faq-item.is-open .faq-answer {
+            grid-template-rows: 1fr;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+        }
+
+        .faq-answer-inner p {
+            margin: 0;
+            padding: 0 26px 22px;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: var(--muted);
+        }
+
+        @keyframes hero-slide {
+            0%, 28% {
+                transform: translateX(0);
+            }
+
+            33%, 61% {
+                transform: translateX(-33.3333%);
+            }
+
+            66%, 94% {
+                transform: translateX(-66.6666%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 1120px) {
+            .site-header {
+                flex-direction: column;
+                align-items: stretch;
+                padding-inline: 0;
+            }
+
+            .nav-cluster {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .brand-copy {
+                white-space: normal;
+            }
+
+            .hero {
+                min-height: 700px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .page-shell {
+                width: 100%;
+                padding-top: 12px;
+            }
+
+            .brand {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .brand-copy {
+                padding-top: 0;
+                font-size: 0.92rem;
+                letter-spacing: 0.12em;
+            }
+
+            .nav-cluster,
+            .site-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .site-nav {
+                gap: 12px;
+            }
+
+            .hero {
+                min-height: 620px;
+                border-radius: 22px;
+            }
+
+            .hero-triangle-strong {
+                width: min(96%, 400px);
+                height: 100%;
+            }
+
+            .hero-copy {
+                left: 28px;
+                right: 20px;
+                bottom: 86px;
+                max-width: 280px;
+            }
+
+            .hero-copy p {
+                font-size: 1.45rem;
+            }
+
+            .site-footer {
+                padding: 42px 24px 26px;
+                border-radius: 24px 24px 0 0;
+            }
+
+            .faq-section {
+                padding: 48px 10px 40px;
+            }
+
+            .faq-question {
+                font-size: 0.97rem;
+                padding: 18px 20px;
+            }
+
+            .faq-answer-inner p {
+                padding: 0 20px 18px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .footer-divider {
+                margin: 24px 0 16px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-accreditation {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .footer-main {
+                grid-template-columns: 1.2fr 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+                max-width: 520px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="home.html" aria-label="Pivot Counselling and Training home">
+                <div class="brand-wordmark" aria-hidden="true">
+                    <strong>PIVOT</strong>
+                    <span>&#9650;</span>
+                </div>
+                <div class="brand-copy">Counselling<br>and Training</div>
+            </a>
+
+            <div class="nav-cluster">
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a class="is-active" href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <a class="book-button" href="contact.html">
+                    <span class="book-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </span>
+                    <span>Book Now</span>
+                </a>
+            </div>
+        </header>
+
+        <main aria-label="Events page">
+            <section class="faq-section" aria-labelledby="faq-heading">
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                            What can I expect from my first counselling session?
+                            <span class="faq-chevron" aria-hidden="true">
+                                <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-1" role="region">
+                            <div class="faq-answer-inner">
+                                <p>Your first session is a relaxed, confidential conversation where we get to know you and understand what you are hoping to work through. There is no pressure to share more than you are comfortable with, we move at your pace, and together we will map out a direction that feels right for you.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                            How many sessions will I need?
+                            <span class="faq-chevron" aria-hidden="true">
+                                <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-2" role="region">
+                            <div class="faq-answer-inner">
+                                <p>The number of sessions varies from person to person and depends on your goals, the nature of the concerns you bring, and your progress over time. Some people find that six to eight sessions meet their needs, while others benefit from a longer journey. We review this together regularly so you are always in the driver's seat.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                            Is everything I share kept confidential?
+                            <span class="faq-chevron" aria-hidden="true">
+                                <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-3" role="region">
+                            <div class="faq-answer-inner">
+                                <p>Yes. Confidentiality is a cornerstone of our practice. What you share remains private, with only the narrow exceptions required by law, such as when there is an immediate risk of serious harm to you or another person. We will explain these limits clearly at the start of our work together so you can feel fully informed and safe.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                            Do you offer online or telehealth appointments?
+                            <span class="faq-chevron" aria-hidden="true">
+                                <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-4" role="region">
+                            <div class="faq-answer-inner">
+                                <p>Yes. We offer secure video and phone appointments for clients who prefer to meet from the comfort of their own space or who live outside the Adelaide area. Online sessions are conducted through an encrypted platform, and the quality of support you receive is the same as in person.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                            What training programs and workshops do you run?
+                            <span class="faq-chevron" aria-hidden="true">
+                                <svg viewBox="0 0 10 6"><polyline points="1 1 5 5 9 1"/></svg>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-5" role="region">
+                            <div class="faq-answer-inner">
+                                <p>Pivot offers a range of professional development workshops and training programs for individuals, community groups, and organisations. Topics include mental health awareness, communication and resilience skills, and trauma-informed practice. Visit our Services or Events pages to see upcoming sessions, or get in touch to discuss a tailored program for your team.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-mark" aria-hidden="true">
+                            <strong>PIVOT</strong>
+                            <span>Counselling and Training</span>
+                        </div>
+                        <p>
+                            Start your path toward greater clarity, steadiness, and connection with counselling and training
+                            support grounded in care.
+                        </p>
+                        <div class="footer-accreditation">
+                            <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Pages</h3>
+                        <div class="footer-links">
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a href="events.html">Events</a>
+                            <a href="faq.html">FAQ</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Services</h3>
+                        <div class="footer-links">
+                            <a href="services.html">Individual Counselling</a>
+                            <a href="services.html">Training Programs</a>
+                            <a href="services.html">Workshops</a>
+                            <a href="services.html">Resources</a>
+                            <a href="contact.html">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Contact</h3>
+                        <div class="footer-contact">
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:hello@pivotcounselling.com.au">hello@pivotcounselling.com.au</a>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+61400000000">+61 400 000 000</a>
+                            </div>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Adelaide, South Australia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider" aria-hidden="true"></div>
+
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Pivot Counselling and Training. All rights reserved.</span>
+                    <span>ABN: 76 683 197 944</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var item = btn.closest('.faq-item');
+                var isOpen = item.classList.contains('is-open');
+
+                document.querySelectorAll('.faq-item.is-open').forEach(function (open) {
+                    open.classList.remove('is-open');
+                    open.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
