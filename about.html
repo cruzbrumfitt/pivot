@@ -149,7 +149,7 @@
             padding: 7px 16px 7px 7px;
             background: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
@@ -232,23 +232,6 @@
         .hero-slide.slide-three {
             background-image: url("background3.jpg");
             background-position: center 24%;
-        }
-
-        .hero-triangle-strong {
-            position: absolute;
-            inset: 0 auto 0 0;
-            pointer-events: none;
-            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-            z-index: 2;
-        }
-
-        .hero-triangle-strong {
-            left: 0;
-            bottom: 0;
-            top: 0;
-            height: 100%;
-            width: clamp(420px, 39vw, 620px);
-            background: linear-gradient(180deg, rgba(33, 41, 102, 0.62), rgba(20, 29, 87, 0.64));
         }
 
         .hero-copy {
@@ -355,7 +338,7 @@
             height: 100%;
             color: var(--brand);
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             background: linear-gradient(180deg, #f1f3fb 0%, #e6eaf7 100%);
@@ -454,7 +437,7 @@
             padding-right: 56px;
             color: var(--brand);
             font-size: clamp(1.75rem, 2.5vw, 2.3rem);
-            font-weight: 500;
+            font-weight: 600;
             line-height: 1.08;
         }
 
@@ -462,7 +445,7 @@
             margin: 0 0 24px;
             color: var(--muted);
             font-size: 0.92rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -475,7 +458,7 @@
             margin: 0 0 10px;
             color: var(--brand);
             font-size: 0.92rem;
-            font-weight: 800;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -515,7 +498,7 @@
             margin: 0 0 20px;
             color: var(--brand);
             font-size: clamp(1.55rem, 2.35vw, 2.3rem);
-            font-weight: 800;
+            font-weight: 600;
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
@@ -684,7 +667,7 @@
             margin-bottom: 3px;
             color: #ffffff;
             font-size: 0.76rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
@@ -910,11 +893,6 @@
                 border-radius: 22px;
             }
 
-            .hero-triangle-strong {
-                width: min(96%, 400px);
-                height: 100%;
-            }
-
             .hero-copy {
                 left: 28px;
                 right: 20px;
@@ -1022,7 +1000,7 @@
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="home.html" aria-label="Pivot Counselling and Training home">
+            <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
                     <strong>PIVOT</strong>
                     <span>&#9650;</span>
@@ -1032,7 +1010,7 @@
 
             <div class="nav-cluster">
                 <nav class="site-nav" aria-label="Primary">
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a class="is-active" href="about.html">About</a>
                     <a href="services.html">Services</a>
                     <a href="events.html">Events</a>
@@ -1057,7 +1035,6 @@
                     <div class="hero-slide slide-two"></div>
                     <div class="hero-slide slide-three"></div>
                 </div>
-                <div class="hero-triangle-strong" aria-hidden="true"></div>
                 <div class="hero-copy">
                     <p>About Pivot and the people behind its care, training, and support.</p>
                 </div>
@@ -1096,20 +1073,20 @@
                     <div class="about-gallery" aria-label="About Pivot image gallery">
                         <div class="about-gallery-stack">
                             <figure class="about-photo about-photo-square">
-                                <img src="about images/DSC09121.jpg" alt="Counselling session at Pivot">
+                                <img src="DSC09121.jpg" alt="Counselling session at Pivot">
                             </figure>
                             <figure class="about-photo about-photo-portrait">
-                                <img src="about images/DSC09087-2.jpg" alt="Conversation during a Pivot consultation">
+                                <img src="DSC09087-2.jpg" alt="Conversation during a Pivot consultation">
                             </figure>
                         </div>
                         <figure class="about-photo about-photo-tall">
-                            <img src="about images/DSC09161.jpg" alt="Meeting room discussion at Pivot Counselling">
+                            <img src="DSC09161.jpg" alt="Meeting room discussion at Pivot Counselling">
                         </figure>
                     </div>
                 </div>
 
                 <figure class="about-group-photo">
-                    <img src="about images/group.jpg" alt="Group portrait of the Pivot Counselling team">
+                    <img src="group.jpg" alt="Group portrait of the Pivot Counselling team">
                 </figure>
 
                 <section class="about-team" aria-label="Meet the Pivot team">
@@ -1117,7 +1094,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Brian Gabriels</h2>
                             <figure class="team-portrait">
-                                <img src="about images/BRIAN.jpg" alt="Portrait of Brian Gabriels">
+                                <img src="BRIAN.jpg" alt="Portrait of Brian Gabriels">
                             </figure>
                             <p class="team-role">Director</p>
                             <p class="team-bio">
@@ -1133,7 +1110,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Wendy Lin</h2>
                             <figure class="team-portrait">
-                                <img src="about images/wendy.jpg" alt="Portrait of Wendy Lin">
+                                <img src="wendy.jpg" alt="Portrait of Wendy Lin">
                             </figure>
                             <p class="team-role">Counsellor</p>
                             <p class="team-bio">
@@ -1149,7 +1126,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Tim Pearson</h2>
                             <figure class="team-portrait">
-                                <img src="about images/TIM.jpg" alt="Portrait of Tim Pearson">
+                                <img src="TIM.jpg" alt="Portrait of Tim Pearson">
                             </figure>
                             <p class="team-role">Counsellor</p>
                             <p class="team-bio">
@@ -1164,7 +1141,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Hannah Mellier</h2>
                             <figure class="team-portrait">
-                                <img src="about images/HANNAH.jpg" alt="Portrait of Hannah Mellier">
+                                <img src="HANNAH.jpg" alt="Portrait of Hannah Mellier">
                             </figure>
                             <p class="team-role">Counsellor</p>
                             <p class="team-bio">
@@ -1180,7 +1157,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Nathanael Reuss</h2>
                             <figure class="team-portrait">
-                                <img src="about images/nath.jpg" alt="Portrait of Nathanael Reuss">
+                                <img src="nath.jpg" alt="Portrait of Nathanael Reuss">
                             </figure>
                             <p class="team-role">Counsellor</p>
                             <p class="team-bio">
@@ -1195,7 +1172,7 @@
                         <article class="team-card">
                             <h2 class="team-name">Esther Buckler</h2>
                             <figure class="team-portrait">
-                                <img src="about images/esh.jpg" alt="Portrait of Esther Buckler">
+                                <img src="esh.jpg" alt="Portrait of Esther Buckler">
                             </figure>
                             <p class="team-role">Psychotherapist</p>
                             <p class="team-bio">
@@ -1491,8 +1468,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Start your path toward greater clarity, steadiness, and connection with counselling and training
-                            support grounded in care.
+                            Meaningful change with clarity, courage and care.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
