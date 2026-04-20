@@ -148,7 +148,7 @@
             padding: 7px 16px 7px 7px;
             background: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
@@ -233,23 +233,6 @@
             background-position: center 24%;
         }
 
-        .hero-triangle-strong {
-            position: absolute;
-            inset: 0 auto 0 0;
-            pointer-events: none;
-            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-            z-index: 2;
-        }
-
-        .hero-triangle-strong {
-            left: 0;
-            bottom: 0;
-            top: 0;
-            height: 100%;
-            width: clamp(420px, 39vw, 620px);
-            background: linear-gradient(180deg, rgba(33, 41, 102, 0.62), rgba(20, 29, 87, 0.64));
-        }
-
         .hero-copy {
             position: absolute;
             left: clamp(38px, 4.6vw, 92px);
@@ -267,6 +250,10 @@
             letter-spacing: -0.02em;
             text-wrap: balance;
             text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero {
+            margin-bottom: 34px;
         }
 
         .site-footer {
@@ -382,7 +369,7 @@
             margin-bottom: 3px;
             color: #ffffff;
             font-size: 0.76rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
@@ -405,10 +392,37 @@
         }
 
         .faq-section {
-            padding: 72px 22px 60px;
-            max-width: 860px;
+            padding: 36px 22px 60px;
+            max-width: 1180px;
             margin: 0 auto;
             width: 100%;
+        }
+
+        .events-intro {
+            padding: 36px 34px 32px;
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid rgba(44, 49, 125, 0.08);
+            box-shadow: 0 10px 32px rgba(44, 49, 125, 0.08);
+            margin-bottom: 34px;
+        }
+
+        .events-section-title {
+            margin: 0;
+            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--brand);
+            text-align: center;
+        }
+
+        .events-intro p {
+            margin: 18px auto 0;
+            font-size: 1.04rem;
+            line-height: 1.7;
+            color: var(--muted);
+            max-width: 60ch;
+            text-align: center;
         }
 
         .faq-section h2 {
@@ -583,11 +597,6 @@
                 border-radius: 22px;
             }
 
-            .hero-triangle-strong {
-                width: min(96%, 400px);
-                height: 100%;
-            }
-
             .hero-copy {
                 left: 28px;
                 right: 20px;
@@ -605,16 +614,14 @@
             }
 
             .faq-section {
-                padding: 48px 10px 40px;
+                padding: 28px 10px 40px;
             }
 
-            .faq-question {
-                font-size: 0.97rem;
-                padding: 18px 20px;
-            }
-
-            .faq-answer-inner p {
-                padding: 0 20px 18px;
+            .events-intro {
+                border-radius: 22px;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-bottom: 28px;
             }
 
             .footer-main {
@@ -651,7 +658,7 @@
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="home.html" aria-label="Pivot Counselling and Training home">
+            <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
                     <strong>PIVOT</strong>
                     <span>&#9650;</span>
@@ -661,7 +668,7 @@
 
             <div class="nav-cluster">
                 <nav class="site-nav" aria-label="Primary">
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="services.html">Services</a>
                     <a class="is-active" href="events.html">Events</a>
@@ -679,9 +686,21 @@
             </div>
         </header>
 
-        <main aria-label="Events page">
-            <section class="faq-section" aria-labelledby="faq-heading">
-                <h2 id="faq-heading">Frequently Asked Questions</h2>
+                <main aria-label="Events page">
+            <section class="faq-section" aria-labelledby="events-heading">
+                <div class="events-intro">
+                    <h2 id="events-heading" class="events-section-title">Upcoming events are on the way.</h2>
+                    <p>
+                        We don&apos;t have any events listed right now, but we are preparing workshops and sessions for
+                        the near future. When they are ready, this page will be updated with dates, topics, and
+                        booking details.
+                    </p>
+                    <p>
+                        In the meantime, you can still get in touch if you are interested in tailored training for
+                        your workplace, school, or community group.
+                    </p>
+                </div>
+
                 <div class="faq-list">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
@@ -705,7 +724,7 @@
                         </button>
                         <div class="faq-answer" id="faq-2" role="region">
                             <div class="faq-answer-inner">
-                                <p>The number of sessions varies from person to person and depends on your goals, the nature of the concerns you bring, and your progress over time. Some people find that six to eight sessions meet their needs, while others benefit from a longer journey. We review this together regularly so you are always in the driver's seat.</p>
+                                <p>The number of sessions varies from person to person and depends on your goals, the nature of the concerns you bring, and your progress over time. Some people find that six to eight sessions meet their needs, while others benefit from a longer journey. We review this together regularly so you are always in the driver&apos;s seat.</p>
                             </div>
                         </div>
                     </div>
@@ -761,8 +780,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Start your path toward greater clarity, steadiness, and connection with counselling and training
-                            support grounded in care.
+                            Meaningful change with clarity, courage and care.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
