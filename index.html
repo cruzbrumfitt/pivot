@@ -149,7 +149,7 @@
             padding: 7px 16px 7px 7px;
             background: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
@@ -232,23 +232,6 @@
         .hero-slide.slide-three {
             background-image: url("background3.jpg");
             background-position: center 24%;
-        }
-
-        .hero-triangle-strong {
-            position: absolute;
-            inset: 0 auto 0 0;
-            pointer-events: none;
-            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-            z-index: 2;
-        }
-
-        .hero-triangle-strong {
-            left: 0;
-            bottom: 0;
-            top: 0;
-            height: 100%;
-            width: clamp(420px, 39vw, 620px);
-            background: linear-gradient(180deg, rgba(33, 41, 102, 0.62), rgba(20, 29, 87, 0.64));
         }
 
         .hero-copy {
@@ -346,7 +329,7 @@
 
         .home-brian-wrap {
             display: grid;
-            grid-template-columns: minmax(0, 1.08fr) minmax(360px, 1fr);
+            grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.84fr);
             gap: clamp(24px, 3vw, 42px);
             align-items: stretch;
             max-width: 1480px;
@@ -358,7 +341,7 @@
         }
 
         .home-brian-copy {
-            max-width: 700px;
+            max-width: 760px;
         }
 
         .home-brian-copy p {
@@ -375,10 +358,11 @@
         .home-brian-photo {
             margin: 0;
             min-height: 0;
-            aspect-ratio: 0.86 / 1;
+            aspect-ratio: 0.82 / 1;
             overflow: hidden;
             background: #e6e7ef;
             align-self: start;
+            border-radius: 28px;
         }
 
         .home-brian-photo img {
@@ -428,7 +412,7 @@
         .home-service-card h3 {
             margin: 18px 0 12px;
             font-size: clamp(1.35rem, 2vw, 1.95rem);
-            font-weight: 800;
+            font-weight: 600;
             line-height: 1.05;
             text-transform: uppercase;
         }
@@ -460,17 +444,31 @@
             padding: 32px 20px;
             background:
                 linear-gradient(rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.58)),
-                url("about images/DSC09121.jpg") center 38% / cover no-repeat;
+                url("http://127.0.0.1:5501/home%20group.jpg") center 46% / cover no-repeat;
+            background-attachment: fixed;
         }
 
         .home-team-banner h2 {
             margin: 0;
-            color: var(--brand);
-            font-size: clamp(2rem, 3.2vw, 3rem);
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+            color: white;
+            font-size: clamp(1.35rem, 2.15vw, 2.1rem);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            text-wrap: balance;
+            text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
             text-align: center;
+            max-width: 460px;
+        }
+
+        .home-team-banner h2::after {
+            content: "";
+            display: block;
+            width: 68px;
+            height: 2px;
+            margin: 18px auto 0;
+            background: rgba(255, 255, 255, 0.7);
         }
 
         .home-team-grid {
@@ -504,7 +502,7 @@
         .home-team-name {
             margin: 0;
             font-size: clamp(1.15rem, 1.55vw, 1.45rem);
-            font-weight: 800;
+            font-weight: 600;
             letter-spacing: 0.03em;
             text-transform: uppercase;
         }
@@ -602,7 +600,7 @@
             margin: 0 0 24px;
             color: var(--muted);
             font-size: 0.92rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -615,7 +613,7 @@
             margin: 0 0 10px;
             color: var(--brand);
             font-size: 0.92rem;
-            font-weight: 800;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -761,7 +759,7 @@
             margin-bottom: 3px;
             color: #ffffff;
             font-size: 0.76rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
@@ -982,11 +980,12 @@
 
             .home-brian-photo {
                 aspect-ratio: auto;
-                min-height: 360px;
+                min-height: 420px;
+                border-radius: 22px;
             }
 
             .home-brian-photo img {
-                min-height: 360px;
+                min-height: 420px;
             }
 
             .home-services-section {
@@ -1018,7 +1017,8 @@
 
             .home-team-banner {
                 min-height: 180px;
-                background-position: center center;
+                background-position: center 46%;
+                background-attachment: scroll;
             }
 
             .home-team-grid {
@@ -1085,11 +1085,6 @@
                 border-radius: 22px;
             }
 
-            .hero-triangle-strong {
-                width: min(96%, 400px);
-                height: 100%;
-            }
-
             .hero-copy {
                 left: 28px;
                 right: 20px;
@@ -1140,7 +1135,7 @@
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="home.html" aria-label="Pivot Counselling and Training home">
+            <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
                     <strong>PIVOT</strong>
                     <span>&#9650;</span>
@@ -1150,7 +1145,7 @@
 
             <div class="nav-cluster">
                 <nav class="site-nav" aria-label="Primary">
-                    <a class="is-active" href="home.html">Home</a>
+                    <a class="is-active" href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="services.html">Services</a>
                     <a href="events.html">Events</a>
@@ -1175,32 +1170,22 @@
                     <div class="hero-slide slide-two"></div>
                     <div class="hero-slide slide-three"></div>
                 </div>
-                <div class="hero-triangle-strong" aria-hidden="true"></div>
                 <div class="hero-copy">
                     <p>Counselling grounded in clarity, care, and connection.</p>
-                </div>
-            </section>
-            <div class="home-group-divider" aria-hidden="true">
-                <div class="home-group-marker"></div>
-            </div>
-            <section class="home-group-section" aria-label="Pivot team introduction">
-                <div class="home-group-wrap">
-                    <div class="home-group-copy">
-                        <p>PIVOT COUNSELLING &amp; TRAINING PROVIDES EVIDENCE-INFORMED COUNSELLING, SUPERVISION, AND PROFESSIONAL TRAINING GROUNDED IN RELATIONSHIP, HELPING INDIVIDUALS AND PRACTITIONERS MOVE TOWARD MEANINGFUL CHANGE.</p>
-                    </div>
-                    <div class="home-group-photo">
-                        <img src="home group.jpg" alt="Pivot Counselling and Training team group photo">
-                    </div>
                 </div>
             </section>
             <section class="home-brian-section" aria-label="Message from Brian Gabriels">
                 <div class="home-brian-wrap">
                     <div class="home-brian-copy">
-                        <p>Hi, I&rsquo;m Brian Gabriels, Director of Pivot Counselling &amp; Training. The intention is to create a space where people can pause, reflect, and engage meaningfully with the challenges they are facing. The work is grounded in a relational approach, recognising that change is shaped not only by insight, but by the experience of being understood and supported.</p>
-                        <p>Whether someone is seeking counselling, supervision, or professional development, Pivot aims to offer a thoughtful and collaborative environment. It is a place to make sense of experience, respond to difficulty with greater flexibility, and move toward what matters most with clarity, purpose, and care.</p>
+                        <p><strong>Welcome to Pivot Counselling &amp; Training.</strong></p>
+                        <p>Pivot was created out of a desire to offer a space that is professional, welcoming, and deeply human - a place where people can access thoughtful counselling, meaningful support, and genuine care.</p>
+                        <p>At the heart of Pivot is a team of independent practitioners who share a commitment to ethical practice, relational depth, and the belief that meaningful change is possible. Whether you are seeking counselling, supervision, or professional development, we hope you encounter a practice marked by clarity, courage, compassion, and integrity.</p>
+                        <p>My hope in establishing Pivot has been to create not only a place of care for clients, but also a community of practitioners committed to reflection, growth, and working well with others.</p>
+                        <p>We are delighted to welcome you and hope this website gives you a sense of who we are, what we value, and how we may be able to support you.</p>
+                        <p>Brian Gabriels<br>Founder &amp; Practice Director</p>
                     </div>
                     <div class="home-brian-photo">
-                        <img src="brian.jpg" alt="Brian Gabriels standing in a suit">
+                        <img src="boss.jpg" alt="Brian Gabriels standing in a suit">
                     </div>
                 </div>
             </section>
@@ -1212,34 +1197,34 @@
                                 <img src="counseilling.jpg" alt="Counselling session at Pivot">
                             </figure>
                             <h3>Counselling</h3>
-                            <p>Our services include: anxiety, stress, trauma, depression, low mood, grief and loss, child and adolescent, family and relationship</p>
+                            <p>Our services include: anxiety, stress, trauma, depression, low mood, grief and loss, child and adolescent, family and relationship.</p>
                         </article>
                         <article class="home-service-card">
                             <figure class="home-service-media">
                                 <img src="training.jpg" alt="Training session around a meeting table">
                             </figure>
                             <h3>Training</h3>
-                            <p>Our training can be tailored to a range of settings, including workplaces, schools, community organisations, and practitioner groups</p>
+                            <p>Our training can be tailored to a range of settings, including workplaces, schools, community organisations, and practitioner groups.</p>
                         </article>
                         <article class="home-service-card">
                             <figure class="home-service-media">
                                 <img src="supervising.jpg" alt="Brian seated in a supervision setting">
                             </figure>
-                            <h3>Supervising</h3>
+                            <h3>Supervision</h3>
                             <p>Our supervision is tailored to suit counsellors, professionals, team leaders, and those working in pastoral or organisational settings.</p>
                         </article>
                     </div>
                 </div>
             </section>
             <section class="home-team-section" aria-labelledby="home-team-heading">
-                <div class="home-team-shell">
-                    <div class="home-team-banner">
-                        <h2 id="home-team-heading">Meet The Team</h2>
-                    </div>
+                    <div class="home-team-shell">
+                        <div class="home-team-banner">
+                            <h2 id="home-team-heading">Meaningful change with clarity, courage and care.</h2>
+                        </div>
                     <div class="home-team-grid">
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/BRIAN.jpg" alt="Portrait of Brian Gabriels">
+                                <img src="BRIAN.jpg" alt="Portrait of Brian Gabriels">
                             </figure>
                             <h3 class="home-team-name">Brian Gabriels</h3>
                             <p class="home-team-bio">Brian brings a calm, thoughtful, and deeply grounded presence to his work, shaped by over 30 years in counselling, supervision, and supporting the training of counsellors in higher education.</p>
@@ -1247,7 +1232,7 @@
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/wendy.jpg" alt="Portrait of Wendy Lin">
+                                <img src="wendy.jpg" alt="Portrait of Wendy Lin">
                             </figure>
                             <h3 class="home-team-name">Wendy Lin</h3>
                             <p class="home-team-bio">Wendy offers a reflective and compassionate space to explore the challenges facing individuals and couples, helping clients make sense of life&apos;s complexities and move toward growth.</p>
@@ -1255,7 +1240,7 @@
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/TIM.jpg" alt="Portrait of Tim Pearson">
+                                <img src="TIM.jpg" alt="Portrait of Tim Pearson">
                             </figure>
                             <h3 class="home-team-name">Tim Pearson</h3>
                             <p class="home-team-bio">Tim brings a steady, down-to-earth approach to his work, shaped by years of supporting people through complex life experiences with a grounded and deeply human presence.</p>
@@ -1263,7 +1248,7 @@
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/HANNAH.jpg" alt="Portrait of Hannah Mellier">
+                                <img src="HANNAH.jpg" alt="Portrait of Hannah Mellier">
                             </figure>
                             <h3 class="home-team-name">Hannah Mellier</h3>
                             <p class="home-team-bio">Hannah brings a warm, grounded approach to her work with children, adolescents, and young women, offering a safe, collaborative, and evidence-based space.</p>
@@ -1271,7 +1256,7 @@
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/nath.jpg" alt="Portrait of Nathanael Reuss">
+                                <img src="nath.jpg" alt="Portrait of Nathanael Reuss">
                             </figure>
                             <h3 class="home-team-name">Nathanael Reuss</h3>
                             <p class="home-team-bio">Nat is a PACFA-registered counsellor based in Adelaide, specialising in grief, loss, workplace abuse, and trauma recovery through care tailored to each client.</p>
@@ -1279,7 +1264,7 @@
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
-                                <img src="about images/esh.jpg" alt="Portrait of Esther Buckler">
+                                <img src="esh.jpg" alt="Portrait of Esther Buckler">
                             </figure>
                             <h3 class="home-team-name">Esther Buckler</h3>
                             <p class="home-team-bio">Esther creates a safe and compassionate space for adults and young people navigating anxiety, stress, grief, trauma, and major life transitions.</p>
@@ -1576,8 +1561,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Start your path toward greater clarity, steadiness, and connection with counselling and training
-                            support grounded in care.
+                            Meaningful change with clarity, courage and care.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">

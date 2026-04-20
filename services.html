@@ -148,7 +148,7 @@
             padding: 7px 16px 7px 7px;
             background: rgba(255, 255, 255, 0.92);
             font-size: 0.95rem;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.04em;
             box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
@@ -184,7 +184,7 @@
 
         .hero {
             position: relative;
-            min-height: 860px;
+            min-height: clamp(520px, 64vw, 860px);
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -206,48 +206,20 @@
             position: absolute;
             inset: 0;
             display: flex;
-            width: 300%;
+            width: 100%;
             height: 100%;
-            animation: hero-slide 18s infinite ease-in-out;
         }
 
         .hero-slide {
-            flex: 0 0 33.3333%;
+            flex: 0 0 100%;
             height: 100%;
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        .hero-slide.slide-one {
-            background-image: url("background1.jpg");
-        }
-
-        .hero-slide.slide-two {
-            background-image: url("background2.jpg");
-            background-position: center 22%;
-        }
-
-        .hero-slide.slide-three {
-            background-image: url("background3.jpg");
-            background-position: center 24%;
-        }
-
-        .hero-triangle-strong {
-            position: absolute;
-            inset: 0 auto 0 0;
-            pointer-events: none;
-            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-            z-index: 2;
-        }
-
-        .hero-triangle-strong {
-            left: 0;
-            bottom: 0;
-            top: 0;
-            height: 100%;
-            width: clamp(420px, 39vw, 620px);
-            background: linear-gradient(180deg, rgba(33, 41, 102, 0.62), rgba(20, 29, 87, 0.64));
+        .hero-slide.services-slide {
+            background-image: url("services.jpg");
         }
 
         .hero-copy {
@@ -256,17 +228,179 @@
             bottom: clamp(92px, 14vw, 170px);
             max-width: 400px;
             color: white;
-            z-index: 3;
+            z-index: 2;
         }
 
         .hero-copy p {
             margin: 0;
             font-size: clamp(1.35rem, 2.15vw, 2.1rem);
             font-style: italic;
+            font-weight: 400;
             line-height: 1.12;
             letter-spacing: -0.02em;
             text-wrap: balance;
             text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .services-message-section {
+            padding: 34px 0 0;
+        }
+
+        .services-message-wrap {
+            display: grid;
+            grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.84fr);
+            gap: clamp(24px, 3vw, 42px);
+            align-items: stretch;
+            max-width: 1480px;
+            width: 100%;
+            margin: 0 auto;
+            padding: clamp(20px, 2.4vw, 28px);
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .services-message-copy {
+            max-width: 760px;
+        }
+
+        .services-message-copy p {
+            margin: 0;
+            font-size: clamp(1.32rem, 1.95vw, 1.68rem);
+            line-height: 1.38;
+            color: var(--brand);
+        }
+
+        .services-message-copy p + p {
+            margin-top: 24px;
+        }
+
+        .services-message-photo {
+            margin: 0;
+            min-height: 0;
+            aspect-ratio: 0.82 / 1;
+            overflow: hidden;
+            background: #e6e7ef;
+            align-self: start;
+            border-radius: 28px;
+        }
+
+        .services-message-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .services-topics {
+            padding: 34px 0 0;
+        }
+
+        .services-topics-inner {
+            max-width: 1480px;
+            margin: 0 auto;
+        }
+
+        .services-topics-shell {
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: clamp(20px, 2.4vw, 28px);
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .services-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .services-tab {
+            border: 1px solid var(--brand);
+            border-radius: 999px;
+            background: transparent;
+            color: var(--brand);
+            padding: 12px 20px;
+            font: inherit;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+        }
+
+        .services-tab:hover,
+        .services-tab:focus-visible {
+            transform: translateY(-1px);
+        }
+
+        .services-tab.is-active {
+            background: var(--brand);
+            color: #ffffff;
+        }
+
+        .services-panels {
+            display: grid;
+        }
+
+        .services-panel {
+            grid-area: 1 / 1;
+            display: grid;
+            grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+            gap: clamp(24px, 3vw, 42px);
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity 220ms ease, transform 220ms ease;
+        }
+
+        .services-panel.is-active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .services-panel-photo {
+            margin: 0;
+            aspect-ratio: 0.92 / 1;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #e6e7ef;
+        }
+
+        .services-panel-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .services-panel-copy {
+            max-width: 620px;
+        }
+
+        .services-panel-copy h3 {
+            margin: 0 0 16px;
+            color: var(--brand);
+            font-size: clamp(1.8rem, 2.8vw, 3rem);
+            font-weight: 600;
+            line-height: 1.08;
+        }
+
+        .services-panel-copy p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.06rem;
+            line-height: 1.7;
+        }
+
+        .services-panel-copy p + p {
+            margin-top: 18px;
         }
 
         .site-footer {
@@ -283,6 +417,7 @@
 
         main {
             flex: 1 0 auto;
+            padding: 0 var(--page-gutter);
         }
 
         .footer-inner {
@@ -382,7 +517,7 @@
             margin-bottom: 3px;
             color: #ffffff;
             font-size: 0.76rem;
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
@@ -511,24 +646,6 @@
             color: var(--muted);
         }
 
-        @keyframes hero-slide {
-            0%, 28% {
-                transform: translateX(0);
-            }
-
-            33%, 61% {
-                transform: translateX(-33.3333%);
-            }
-
-            66%, 94% {
-                transform: translateX(-66.6666%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
         @media (max-width: 1120px) {
             .site-header {
                 flex-direction: column;
@@ -547,7 +664,7 @@
             }
 
             .hero {
-                min-height: 700px;
+                min-height: clamp(480px, 68vw, 700px);
             }
         }
 
@@ -579,13 +696,8 @@
             }
 
             .hero {
-                min-height: 620px;
+                min-height: clamp(420px, 112vw, 620px);
                 border-radius: 22px;
-            }
-
-            .hero-triangle-strong {
-                width: min(96%, 400px);
-                height: 100%;
             }
 
             .hero-copy {
@@ -597,6 +709,77 @@
 
             .hero-copy p {
                 font-size: 1.45rem;
+            }
+
+            .services-message-section {
+                padding-top: 24px;
+            }
+
+            .services-message-wrap {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 22px 18px 18px;
+            }
+
+            .services-message-copy {
+                max-width: none;
+            }
+
+            .services-message-photo {
+                aspect-ratio: auto;
+                min-height: 420px;
+                border-radius: 22px;
+            }
+
+            .services-message-photo img {
+                min-height: 420px;
+            }
+
+            .services-message-copy p {
+                font-size: clamp(1.06rem, 1.35vw, 1.25rem);
+                line-height: 1.42;
+            }
+
+            .services-topics {
+                padding-top: 24px;
+            }
+
+            .services-topics-shell {
+                padding: 22px 18px 18px;
+            }
+
+            .services-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+            }
+
+            .services-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .services-tab {
+                flex: 0 0 auto;
+                white-space: nowrap;
+            }
+
+            .services-panel {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-panel-photo {
+                aspect-ratio: auto;
+                min-height: 320px;
+            }
+
+            .services-panel-copy h3 {
+                font-size: clamp(1.6rem, 8vw, 2.4rem);
+            }
+
+            .services-panel-copy p {
+                font-size: 1rem;
             }
 
             .site-footer {
@@ -651,7 +834,7 @@
 <body>
     <div class="page-shell">
         <header class="site-header">
-            <a class="brand" href="home.html" aria-label="Pivot Counselling and Training home">
+            <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
                     <strong>PIVOT</strong>
                     <span>&#9650;</span>
@@ -661,7 +844,7 @@
 
             <div class="nav-cluster">
                 <nav class="site-nav" aria-label="Primary">
-                    <a href="home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a class="is-active" href="services.html">Services</a>
                     <a href="events.html">Events</a>
@@ -680,6 +863,106 @@
         </header>
 
         <main aria-label="Services page">
+            <section class="hero" aria-label="Services banner">
+                <div class="hero-slides" aria-hidden="true">
+                    <div class="hero-slide services-slide"></div>
+                </div>
+                <div class="hero-copy">
+                    <p>Explore the services Pivot offers</p>
+                </div>
+            </section>
+            <section class="services-message-section" aria-label="Services message">
+                <div class="services-message-wrap">
+                    <div class="services-message-copy">
+                        <p><strong>Welcome to Pivot Counselling &amp; Training.</strong></p>
+                        <p>At Pivot Counselling &amp; Training, we offer counselling in a safe, respectful, and supportive environment where you can slow down and make sense of what you are experiencing. We understand that reaching out can feel like a significant step, and our aim is to create a space where you feel heard, understood, and supported. Whether you or a loved one are navigating anxiety, low mood, relationship difficulties, grief, or major life transitions, we work collaboratively with you to find a way forward that feels meaningful and supportive.</p>
+                        <p>We are delighted to welcome you and hope this page gives you a sense of who we are, what we value, and how we may be able to support you.</p>
+                    </div>
+                    <div class="services-message-photo">
+                        <img src="office.jpg" alt="Pivot counselling office">
+                    </div>
+                </div>
+            </section>
+            <section class="services-topics" aria-label="Service topics">
+                <div class="services-topics-inner">
+                    <div class="services-tabs" role="tablist" aria-label="Service topics">
+                        <button class="services-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="topic-anxiety" id="tab-anxiety">Anxiety</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-relationships" id="tab-relationships">Relationships</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-self-esteem" id="tab-self-esteem">Self Esteem</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-depression" id="tab-depression">Depression</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-trauma" id="tab-trauma">Trauma</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-childhood-abuse" id="tab-childhood-abuse">Childhood Abuse</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-other" id="tab-other">Other</button>
+                    </div>
+                    <div class="services-topics-shell">
+                        <div class="services-panels">
+                            <article class="services-panel is-active" role="tabpanel" id="topic-anxiety" aria-labelledby="tab-anxiety">
+                                <figure class="services-panel-photo">
+                                    <img src="office.jpg" alt="Calm counselling office">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Anxiety</h3>
+                                    <p>We all feel anxious sometimes. When anxiety begins affecting your daily life, counselling can help you understand what is driving it, slow the overwhelm, and develop practical ways to feel more steady and in control.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-relationships" aria-labelledby="tab-relationships" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="group.jpg" alt="Group connection and relationship image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Relationships</h3>
+                                    <p>Relationships can bring both support and strain. We work with individuals and couples to improve communication, rebuild trust, and navigate the patterns that keep them stuck.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-self-esteem" aria-labelledby="tab-self-esteem" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="counseilling.jpg" alt="Counselling support image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Self Esteem</h3>
+                                    <p>When self-doubt is constant, it can be hard to trust your own judgment. Counselling can support you to build self-worth, soften self-criticism, and develop a more grounded sense of yourself.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-depression" aria-labelledby="tab-depression" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="background2.jpg" alt="Mood and reflection image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Depression</h3>
+                                    <p>Depression can leave you feeling flat, disconnected, or weighed down. We offer a supportive space to explore what is happening, strengthen daily coping, and reconnect with what matters.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-trauma" aria-labelledby="tab-trauma" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="background3.jpg" alt="Trauma support image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Trauma</h3>
+                                    <p>Trauma can affect how safe and settled life feels. We work gently and collaboratively so you can process experiences at a pace that feels manageable and respectful.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-childhood-abuse" aria-labelledby="tab-childhood-abuse" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="contact.jpg" alt="Support and care image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Childhood Abuse</h3>
+                                    <p>Experiences from childhood can shape the way we feel, relate, and cope long after they happen. We provide a safe and respectful space to explore those experiences and their impact, with care and sensitivity.</p>
+                                </div>
+                            </article>
+                            <article class="services-panel" role="tabpanel" id="topic-other" aria-labelledby="tab-other" hidden>
+                                <figure class="services-panel-photo">
+                                    <img src="services.jpg" alt="General support image">
+                                </figure>
+                                <div class="services-panel-copy">
+                                    <h3>Other</h3>
+                                    <p>If your concern is not listed here, that does not mean it is not welcome. We support a wide range of life challenges and can talk with you about what you need.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="faq-section" aria-labelledby="faq-heading">
                 <h2 id="faq-heading">Frequently Asked Questions</h2>
                 <div class="faq-list">
@@ -761,8 +1044,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Start your path toward greater clarity, steadiness, and connection with counselling and training
-                            support grounded in care.
+                            Meaningful change with clarity, courage and care.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
@@ -820,6 +1102,31 @@
         </footer>
     </div>
     <script>
+        document.querySelectorAll('.services-tab').forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var tablist = tab.closest('.services-tabs');
+                var section = tab.closest('.services-topics');
+                var shell = section ? section.querySelector('.services-topics-shell') : null;
+                var targetId = tab.getAttribute('aria-controls');
+                if (!shell) {
+                    return;
+                }
+                var targetPanel = shell.querySelector('#' + targetId);
+
+                tablist.querySelectorAll('.services-tab').forEach(function (btn) {
+                    var active = btn === tab;
+                    btn.classList.toggle('is-active', active);
+                    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+
+                shell.querySelectorAll('.services-panel').forEach(function (panel) {
+                    var active = panel === targetPanel;
+                    panel.classList.toggle('is-active', active);
+                    panel.hidden = !active;
+                });
+            });
+        });
+
         document.querySelectorAll('.faq-question').forEach(function (btn) {
             btn.addEventListener('click', function () {
                 var item = btn.closest('.faq-item');
