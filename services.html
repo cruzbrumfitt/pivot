@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Pivot Counselling and Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #FAFAFA;
@@ -15,6 +18,7 @@
             --muted: #6d7193;
             --shadow: 0 22px 60px rgba(38, 44, 95, 0.12);
             --radius: 28px;
+            --page-gutter: clamp(16px, 2.4vw, 28px);
         }
 
         * {
@@ -45,7 +49,7 @@
         }
 
         .page-shell {
-            width: min(100%, 1970px);
+            width: min(100%, 1600px);
             margin: 0 auto;
             padding: 6px 0 0;
             min-height: 100vh;
@@ -58,7 +62,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            padding: 4px 22px 14px;
+            padding: 4px var(--page-gutter) 14px;
         }
 
         .brand {
@@ -302,9 +306,9 @@
         }
 
         .services-topics-shell {
-            max-width: 1480px;
+            max-width: 977px;
             margin: 0 auto;
-            padding: clamp(20px, 2.4vw, 28px);
+            padding: clamp(56px, 6vw, 84px) clamp(20px, 2.4vw, 28px);
             background: #fff;
             box-shadow: var(--shadow);
         }
@@ -343,6 +347,8 @@
 
         .services-panels {
             display: grid;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .services-panel {
@@ -829,6 +835,197 @@
                 max-width: 520px;
             }
         }
+
+        /* ── Responsive (phones / tablets / large screens) ── */
+        main > section {
+            padding-left: var(--page-gutter);
+            padding-right: var(--page-gutter);
+        }
+
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            padding: 0;
+            border: 2px solid var(--brand);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--brand);
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .nav-toggle:hover,
+        .nav-toggle:focus-visible {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(44, 49, 125, 0.18);
+            outline: none;
+        }
+
+        .nav-toggle-bars {
+            position: relative;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            display: block;
+            transition: background 180ms ease;
+        }
+
+        .nav-toggle-bars::before,
+        .nav-toggle-bars::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: transform 220ms ease, top 220ms ease;
+        }
+
+        .nav-toggle-bars::before { top: -6px; }
+        .nav-toggle-bars::after  { top:  6px; }
+
+        body.nav-open .nav-toggle-bars { background: transparent; }
+        body.nav-open .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+        body.nav-open .nav-toggle-bars::after  { top: 0; transform: rotate(-45deg); }
+
+        @media (max-width: 1120px) {
+            .site-header {
+                flex-direction: row !important;
+                align-items: center !important;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .nav-cluster { gap: 14px; flex-wrap: nowrap; }
+            .site-nav {
+                gap: clamp(10px, 1.6vw, 20px);
+                font-size: clamp(0.82rem, 1.25vw, 1rem);
+            }
+            .brand-copy { white-space: normal; }
+        }
+
+        @media (max-width: 900px) {
+            .site-header {
+                position: relative;
+                padding: 10px var(--page-gutter);
+                gap: 12px;
+            }
+            .brand { flex-direction: row !important; gap: 12px !important; }
+            .brand-wordmark strong { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
+            .brand-wordmark span { font-size: 1rem; }
+            .brand-copy {
+                font-size: clamp(0.7rem, 2.2vw, 0.86rem);
+                letter-spacing: 0.1em;
+            }
+            .nav-toggle { display: inline-flex; }
+            .nav-cluster {
+                margin-left: auto;
+                flex-direction: row !important;
+                align-items: center !important;
+                gap: 10px;
+            }
+            .site-header .site-nav {
+                position: absolute;
+                top: 100%;
+                left: var(--page-gutter);
+                right: var(--page-gutter);
+                z-index: 40;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 4px;
+                background: #fff;
+                border-radius: 20px;
+                box-shadow: 0 22px 48px rgba(38, 44, 95, 0.18);
+                opacity: 0;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity 200ms ease, transform 200ms ease;
+            }
+            body.nav-open .site-header .site-nav {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .site-header .site-nav a {
+                display: block;
+                padding: 14px 18px;
+                font-size: 1rem;
+                border-radius: 12px;
+            }
+            .site-header .site-nav a::after { display: none; }
+            .site-header .site-nav a.is-active,
+            .site-header .site-nav a:hover {
+                background: rgba(44, 49, 125, 0.08);
+            }
+            .book-button {
+                padding: 5px 12px 5px 5px;
+                font-size: 0.82rem;
+                gap: 8px;
+                border-width: 2px;
+            }
+            .book-icon { width: 32px; }
+            .book-icon svg { width: 13px; height: 13px; }
+            .footer-main {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            .site-footer {
+                padding: 36px 22px 24px;
+                border-radius: 22px 22px 0 0;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .footer-main { grid-template-columns: 1fr 1fr !important; }
+            .footer-brand { grid-column: 1 / -1 !important; }
+        }
+
+        @media (max-width: 480px) {
+            .book-button {
+                padding: 4px 12px 4px 4px;
+                font-size: 0.72rem;
+                gap: 6px;
+                border-width: 2px;
+            }
+            .book-icon { width: 28px; }
+            .book-icon svg { width: 11px; height: 11px; }
+            .brand { gap: 8px !important; }
+            .brand-copy { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+        }
+
+        /* ── Scale up on large monitors ── */
+        @media (min-width: 1500px) {
+            .page-shell { width: min(100%, 1880px); }
+        }
+        @media (min-width: 1900px) {
+            .page-shell { width: min(100%, 2200px); }
+        }
+        @media (min-width: 2400px) {
+            .page-shell { width: min(100%, 2600px); }
+        }
+
+        /* ── Typography overrides ── */
+        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; }
+        h1 { font-size: 28px !important; }
+        h2, h3 { font-size: 28px !important; }
+
+        .about-kicker {
+            margin: 0 0 20px;
+            color: var(--brand);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
@@ -859,6 +1056,10 @@
                     </span>
                     <span>Book Now</span>
                 </a>
+
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="nav-toggle-bars" aria-hidden="true"></span>
+                </button>
             </div>
         </header>
 
@@ -874,7 +1075,7 @@
             <section class="services-message-section" aria-label="Services message">
                 <div class="services-message-wrap">
                     <div class="services-message-copy">
-                        <p><strong>Welcome to Pivot Counselling &amp; Training.</strong></p>
+                        <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training.</h1>
                         <p>At Pivot Counselling &amp; Training, we offer counselling in a safe, respectful, and supportive environment where you can slow down and make sense of what you are experiencing. We understand that reaching out can feel like a significant step, and our aim is to create a space where you feel heard, understood, and supported. Whether you or a loved one are navigating anxiety, low mood, relationship difficulties, grief, or major life transitions, we work collaboratively with you to find a way forward that feels meaningful and supportive.</p>
                         <p>We are delighted to welcome you and hope this page gives you a sense of who we are, what we value, and how we may be able to support you.</p>
                     </div>
@@ -1143,6 +1344,28 @@
                 }
             });
         });
+    </script>
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var nav = document.querySelector('.site-header .site-nav');
+            if (!toggle || !nav) return;
+            function setOpen(open) {
+                document.body.classList.toggle('nav-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+            }
+            toggle.addEventListener('click', function () {
+                setOpen(!document.body.classList.contains('nav-open'));
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+            var mql = window.matchMedia('(min-width: 901px)');
+            mql.addEventListener('change', function (e) { if (e.matches) setOpen(false); });
+        })();
     </script>
 </body>
 </html>
