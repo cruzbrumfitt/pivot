@@ -918,19 +918,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 22px;
             max-width: 640px;
             margin: 0 auto;
         }
 
         .newsletter-title {
-            margin: 0;
+            margin: 0 0 14px;
             color: #ffffff;
             font-weight: 700;
+            font-size: clamp(1.6rem, 2.6vw, 2.25rem) !important;
+            line-height: 1.2;
         }
 
         .newsletter-copy {
             max-width: 520px;
+            margin-bottom: 28px;
         }
 
         .newsletter-copy p {
@@ -948,7 +950,6 @@
             padding: 8px;
             border-radius: 999px;
             width: min(100%, 560px);
-            margin-top: 6px;
         }
 
         .newsletter-input {

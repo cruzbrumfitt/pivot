@@ -6,7 +6,7 @@
     <title>Services | Pivot Counselling and Training</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #FAFAFA;
@@ -306,7 +306,7 @@
         }
 
         .services-topics-shell {
-            max-width: 977px;
+            max-width: 1480px;
             margin: 0 auto;
             padding: clamp(56px, 6vw, 84px) clamp(20px, 2.4vw, 28px);
             background: #fff;
@@ -347,7 +347,7 @@
 
         .services-panels {
             display: grid;
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -387,7 +387,66 @@
         }
 
         .services-panel-copy {
-            max-width: 620px;
+            max-width: none;
+            text-align: left;
+        }
+
+        .services-training-section {
+            padding: 34px 0 0;
+        }
+
+        .services-training-wrap {
+            max-width: 1480px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .services-training-banner {
+            position: relative;
+            min-height: 240px;
+            display: grid;
+            place-items: center;
+            padding: 32px 20px;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.58)),
+                url("DSC09036.jpg") center 46% / cover no-repeat;
+        }
+
+        .services-training-banner h2 {
+            margin: 0;
+            color: var(--brand);
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            text-align: center;
+            text-wrap: balance;
+            max-width: 980px;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .services-training-copy {
+            padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 56px);
+            background: #fff;
+            color: var(--brand);
+        }
+
+        .services-training-copy p {
+            margin: 0 0 18px;
+            font-size: clamp(1.1rem, 1.3vw, 1.35rem);
+            line-height: 1.55;
+        }
+
+        .services-training-copy ul {
+            margin: 0;
+            padding-left: 22px;
+            font-size: clamp(1.1rem, 1.3vw, 1.35rem);
+            line-height: 1.55;
+        }
+
+        .services-training-copy ul li {
+            margin-bottom: 4px;
         }
 
         .services-panel-copy h3 {
@@ -407,6 +466,18 @@
 
         .services-panel-copy p + p {
             margin-top: 18px;
+        }
+
+        .services-panel-copy ul {
+            margin: 0 0 18px;
+            padding-left: 22px;
+            color: var(--muted);
+            font-size: 1.06rem;
+            line-height: 1.7;
+        }
+
+        .services-panel-copy ul li {
+            margin-bottom: 4px;
         }
 
         .site-footer {
@@ -1087,80 +1158,136 @@
             <section class="services-topics" aria-label="Service topics">
                 <div class="services-topics-inner">
                     <div class="services-tabs" role="tablist" aria-label="Service topics">
-                        <button class="services-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="topic-anxiety" id="tab-anxiety">Anxiety</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-relationships" id="tab-relationships">Relationships</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-self-esteem" id="tab-self-esteem">Self Esteem</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-depression" id="tab-depression">Depression</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-trauma" id="tab-trauma">Trauma</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-childhood-abuse" id="tab-childhood-abuse">Childhood Abuse</button>
-                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-other" id="tab-other">Other</button>
+                        <button class="services-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="topic-anxiety" id="tab-anxiety">Anxiety, Stress &amp; Trauma</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-depression" id="tab-depression">Depression &amp; Low Mood</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-grief" id="tab-grief">Grief &amp; Loss</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-relationships" id="tab-relationships">Marriage &amp; Relationships</button>
+                        <button class="services-tab" type="button" role="tab" aria-selected="false" aria-controls="topic-family" id="tab-family">Child, Adolescent &amp; Family</button>
                     </div>
                     <div class="services-topics-shell">
                         <div class="services-panels">
                             <article class="services-panel is-active" role="tabpanel" id="topic-anxiety" aria-labelledby="tab-anxiety">
                                 <figure class="services-panel-photo">
-                                    <img src="office.jpg" alt="Calm counselling office">
+                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
-                                    <h3>Anxiety</h3>
-                                    <p>We all feel anxious sometimes. When anxiety begins affecting your daily life, counselling can help you understand what is driving it, slow the overwhelm, and develop practical ways to feel more steady and in control.</p>
-                                </div>
-                            </article>
-                            <article class="services-panel" role="tabpanel" id="topic-relationships" aria-labelledby="tab-relationships" hidden>
-                                <figure class="services-panel-photo">
-                                    <img src="group.jpg" alt="Group connection and relationship image">
-                                </figure>
-                                <div class="services-panel-copy">
-                                    <h3>Relationships</h3>
-                                    <p>Relationships can bring both support and strain. We work with individuals and couples to improve communication, rebuild trust, and navigate the patterns that keep them stuck.</p>
-                                </div>
-                            </article>
-                            <article class="services-panel" role="tabpanel" id="topic-self-esteem" aria-labelledby="tab-self-esteem" hidden>
-                                <figure class="services-panel-photo">
-                                    <img src="counseilling.jpg" alt="Counselling support image">
-                                </figure>
-                                <div class="services-panel-copy">
-                                    <h3>Self Esteem</h3>
-                                    <p>When self-doubt is constant, it can be hard to trust your own judgment. Counselling can support you to build self-worth, soften self-criticism, and develop a more grounded sense of yourself.</p>
+                                    <h3>Anxiety, Stress &amp; Trauma</h3>
+                                    <p>Pivot Counselling is committed to walking with you as you deal with:</p>
+                                    <ul>
+                                        <li>Ongoing anxiety or worry</li>
+                                        <li>Panic attacks</li>
+                                        <li>Social or performance anxiety</li>
+                                        <li>Trauma and post-traumatic stress</li>
+                                        <li>Difficulty switching off or relaxing</li>
+                                        <li>Stress, overwhelm, or burnout</li>
+                                    </ul>
+                                    <p>Anxiety, stress, and trauma can affect the way a person thinks, feels, and moves through daily life. At times, the effects can be obvious and intense. At other times, they can sit quietly in the background, shaping how safe, settled, or steady a person feels.</p>
+                                    <p>Anxiety can show up in many ways such as, including persistent worry, physical tension, panic, difficulty sleeping, or a sense of being constantly on edge. For some of us, these experiences are also shaped by past or recent trauma, making it harder to feel settled, safe, or able to switch off.</p>
                                 </div>
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-depression" aria-labelledby="tab-depression" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="background2.jpg" alt="Mood and reflection image">
+                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
-                                    <h3>Depression</h3>
-                                    <p>Depression can leave you feeling flat, disconnected, or weighed down. We offer a supportive space to explore what is happening, strengthen daily coping, and reconnect with what matters.</p>
+                                    <h3>Depression &amp; Low Mood</h3>
+                                    <p>Your pivot counsellor is professionally focused on helping you face:</p>
+                                    <ul>
+                                        <li>Persistent low mood or sadness</li>
+                                        <li>Loss of motivation or energy</li>
+                                        <li>Feeling disconnected or numb</li>
+                                        <li>Reduced enjoyment in life</li>
+                                        <li>Burnout or emotional exhaustion</li>
+                                        <li>Loss of direction or meaning</li>
+                                    </ul>
+                                    <p>We support those experiencing ongoing low mood, loss of motivation, or a sense of disconnection from life. This may include reduced enjoyment, fatigue, or difficulty finding direction and meaning.</p>
+                                    <p>We are also committed to supporting individuals navigating burnout, longer-term depression, or the emotional impact of life changes and unmet expectations.</p>
                                 </div>
                             </article>
-                            <article class="services-panel" role="tabpanel" id="topic-trauma" aria-labelledby="tab-trauma" hidden>
+                            <article class="services-panel" role="tabpanel" id="topic-grief" aria-labelledby="tab-grief" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="background3.jpg" alt="Trauma support image">
+                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
-                                    <h3>Trauma</h3>
-                                    <p>Trauma can affect how safe and settled life feels. We work gently and collaboratively so you can process experiences at a pace that feels manageable and respectful.</p>
+                                    <h3>Grief &amp; Loss</h3>
+                                    <p>Your Pivot counsellor can support you to make sense of your experience and find a way forward, while honouring what has been lost. This may include:</p>
+                                    <ul>
+                                        <li>Loss of a loved one</li>
+                                        <li>Relationship separation or divorce</li>
+                                        <li>Life transitions (e.g. relocation, career change)</li>
+                                        <li>Feelings of longing, numbness, or disorientation</li>
+                                        <li>Adjusting to change and redefining identity</li>
+                                    </ul>
+                                    <p>Grief can show up in many ways including sadness, numbness, longing, or a sense of disorientation. At Pivot, we support people navigating the impact of loss, whether through the death of a loved one, relationship breakdown, or significant life change.</p>
+                                    <p>We recognise that grief is deeply personal and does not follow a fixed timeline.</p>
                                 </div>
                             </article>
-                            <article class="services-panel" role="tabpanel" id="topic-childhood-abuse" aria-labelledby="tab-childhood-abuse" hidden>
+                            <article class="services-panel" role="tabpanel" id="topic-relationships" aria-labelledby="tab-relationships" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="contact.jpg" alt="Support and care image">
+                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
-                                    <h3>Childhood Abuse</h3>
-                                    <p>Experiences from childhood can shape the way we feel, relate, and cope long after they happen. We provide a safe and respectful space to explore those experiences and their impact, with care and sensitivity.</p>
+                                    <h3>Marriage &amp; Relationships</h3>
+                                    <p>Your Pivot counsellor will create a space to talk openly and work carefully with these concerns, supporting greater understanding, steadiness, and connection. This may include:</p>
+                                    <ul>
+                                        <li>Conflict and communication difficulties</li>
+                                        <li>Repeated arguments or unhelpful relational patterns</li>
+                                        <li>Emotional disconnection or loneliness within the relationship</li>
+                                        <li>Trust issues, betrayal, and repair</li>
+                                        <li>Relationship stress and strain</li>
+                                        <li>Separation and relationship transitions</li>
+                                        <li>Parenting stress impacting the couple relationship</li>
+                                        <li>Intimacy and sexual concerns</li>
+                                        <li>Rebuilding closeness, understanding, and connection</li>
+                                    </ul>
+                                    <p>Close relationships can be a deep source of love, support, and meaning, but they can also become places of hurt, tension, and disconnection. When communication breaks down, trust is damaged, or conflict becomes repetitive, partners can feel stuck, distant, or unsure how to move forward.</p>
+                                    <p>At other times, it can be less obvious but no less painful — a loss of closeness, growing resentment, loneliness, or a sense that things are no longer as they once were. Intimacy concerns may also be present, including difficulties with affection, emotional or sexual closeness, or feeling understood by one another.</p>
                                 </div>
                             </article>
-                            <article class="services-panel" role="tabpanel" id="topic-other" aria-labelledby="tab-other" hidden>
+                            <article class="services-panel" role="tabpanel" id="topic-family" aria-labelledby="tab-family" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="services.jpg" alt="General support image">
+                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
-                                    <h3>Other</h3>
-                                    <p>If your concern is not listed here, that does not mean it is not welcome. We support a wide range of life challenges and can talk with you about what you need.</p>
+                                    <h3>Child, Adolescent &amp; Family</h3>
+                                    <p>Your Pivot counsellor will create a supportive space to understand what is happening for your child or family, and work with you to respond with care, clarity, and practical direction. This may include support with:</p>
+                                    <ul>
+                                        <li>Anxiety, stress, or emotional overwhelm in children and adolescents</li>
+                                        <li>Behavioural concerns and emotional regulation difficulties</li>
+                                        <li>School-related stress, friendship issues, or social challenges</li>
+                                        <li>Low mood, withdrawal, or loss of confidence</li>
+                                        <li>Family conflict and communication difficulties</li>
+                                        <li>Parenting challenges and relational strain at home</li>
+                                        <li>Separation, blended family, or co-parenting adjustments</li>
+                                        <li>Life transitions, grief, loss, or significant change</li>
+                                        <li>Strengthening understanding, connection, and support within the family</li>
+                                    </ul>
+                                    <p>Children, adolescents, and families can go through seasons that feel stressful, confusing, or emotionally heavy. A child may struggle to express what is happening, while an adolescent may feel overwhelmed, withdrawn, anxious, or misunderstood. Family life can also come under strain when emotional distress, behavioural concerns, conflict, or major transitions begin to affect the home.</p>
+                                    <p>Your Pivot counsellor provides a space to better understand these experiences, respond with care, and find thoughtful, practical ways forward. This may involve supporting a young person individually, working alongside parents, or helping families make sense of patterns contributing to tension, disconnection, or distress.</p>
                                 </div>
                             </article>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class="services-training-section" aria-label="Training and professional development">
+                <div class="services-training-wrap">
+                    <div class="services-training-banner">
+                        <h2>Training and Professional Development</h2>
+                    </div>
+                    <div class="services-training-copy">
+                        <p>Pivot counselling provides a wealth of professional support for individuals facing a particular need, trauma or relationship issue. However, the best treatment may well be preparation, training us to be prepared for, aware of and able to grow before these events occur.</p>
+                        <p>Individual and personal Training can play an important role in strengthening insight, building practical skills, and supporting healthier ways of relating, working, and responding to challenge. At Pivot training we offer a growth and resilience training that is thoughtful, engaging, and grounded in both professional experience and real-world application.</p>
+                        <p>Our training can be tailored to a range of settings; workplaces, schools, community organisations, and practitioner groups.</p>
+                        <p>This training may build you and your team in:</p>
+                        <ul>
+                            <li>Mental health and wellbeing</li>
+                            <li>Acceptance and Commitment Therapy (ACT)</li>
+                            <li>Communication and relational health</li>
+                            <li>Psychosocial education</li>
+                            <li>Workplace well-being and team functioning</li>
+                            <li>Professional development for therapists and helping professionals</li>
+                        </ul>
                     </div>
                 </div>
             </section>
