@@ -415,7 +415,7 @@
         .home-service-card h3 {
             margin: 18px 0 12px;
             font-size: clamp(1.35rem, 2vw, 1.95rem);
-            font-weight: 600;
+            font-weight: 400;
             line-height: 1.05;
             text-transform: uppercase;
         }
@@ -479,12 +479,24 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 34px 28px;
             padding: 34px 30px 36px;
-            align-items: start;
+            align-items: stretch;
         }
 
         .home-team-card {
             text-align: center;
             color: var(--brand);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .home-team-card .home-team-bio {
+            flex: 1 1 auto;
+        }
+
+        .home-team-card .team-link {
+            margin-top: auto;
         }
 
         .home-team-portrait {
@@ -515,7 +527,7 @@
             margin: 16px auto 20px;
             max-width: 360px;
             color: var(--brand);
-            font-size: 1rem;
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
             line-height: 1.42;
         }
 
@@ -726,9 +738,10 @@
         .footer-group h3 {
             margin: 0 0 16px;
             font-size: 1.05rem;
-            font-weight: 600;
+            font-weight: 400;
             color: #ffffff;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .footer-links {
@@ -1344,10 +1357,11 @@
         }
 
         /* ── Typography overrides ── */
-        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; }
-        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; }
-        h1 { font-size: 28px !important; }
-        h2, h3 { font-size: 28px !important; }
+        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; line-height: 1.7; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; line-height: 1.7; }
+        h1 { font-size: 34px !important; }
+        h2, h3 { font-size: 34px; }
+        p { line-height: 1.7; }
 
         .about-kicker {
             margin: 0 0 20px;
@@ -1407,7 +1421,7 @@
             <section class="home-brian-section" aria-label="Message from Brian Gabriels">
                 <div class="home-brian-wrap">
                     <div class="home-brian-copy">
-                        <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training.</h1>
+                        <h1 class="about-kicker">Welcome to Pivot</h1>
                         <p>Pivot was created out of a desire to offer a space that is professional, welcoming, and deeply human - a place where people can access thoughtful counselling, meaningful support, and genuine care.</p>
                         <p>At the heart of Pivot is a team of independent practitioners who share a commitment to ethical practice, relational depth, and the belief that meaningful change is possible. Whether you are seeking counselling, supervision, or professional development, we hope you encounter a practice marked by clarity, courage, compassion, and integrity.</p>
                         <p>We are delighted to welcome you and hope this website gives you a sense of who we are, what we value, and how we may be able to support you.</p>
@@ -1448,7 +1462,7 @@
             <section class="home-team-section" aria-labelledby="home-team-heading">
                     <div class="home-team-shell">
                         <div class="home-team-banner">
-                            <h2 id="home-team-heading">Meaningful change with clarity, courage and care.</h2>
+                            <h2 id="home-team-heading">The Pivot team</h2>
                         </div>
                     <div class="home-team-grid">
                         <article class="home-team-card">

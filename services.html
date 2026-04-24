@@ -306,9 +306,9 @@
         }
 
         .services-topics-shell {
-            max-width: 1480px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: clamp(56px, 6vw, 84px) clamp(20px, 2.4vw, 28px);
+            padding: clamp(10px, 1.4vw, 18px) clamp(20px, 2.4vw, 28px);
             background: #fff;
             box-shadow: var(--shadow);
         }
@@ -347,7 +347,7 @@
 
         .services-panels {
             display: grid;
-            max-width: 1400px;
+            max-width: 1120px;
             margin: 0 auto;
         }
 
@@ -372,10 +372,11 @@
 
         .services-panel-photo {
             margin: 0;
-            aspect-ratio: 0.92 / 1;
+            max-width: 320px;
+            aspect-ratio: 1 / 1;
             border-radius: 28px;
             overflow: hidden;
-            background: #e6e7ef;
+            background: transparent;
         }
 
         .services-panel-photo img {
@@ -401,56 +402,83 @@
             background: #fff;
             box-shadow: var(--shadow);
             overflow: hidden;
-        }
-
-        .services-training-banner {
-            position: relative;
-            min-height: 240px;
             display: grid;
-            place-items: center;
-            padding: 32px 20px;
-            background:
-                linear-gradient(rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.58)),
-                url("DSC09036.jpg") center 46% / cover no-repeat;
-        }
-
-        .services-training-banner h2 {
-            margin: 0;
-            color: var(--brand);
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            text-align: center;
-            text-wrap: balance;
-            max-width: 980px;
-            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
+            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 1fr);
+            gap: clamp(24px, 3vw, 48px);
+            align-items: center;
+            padding: clamp(24px, 3vw, 48px);
+            min-height: 560px;
         }
 
         .services-training-copy {
-            padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 56px);
-            background: #fff;
             color: var(--brand);
+            align-self: center;
+        }
+
+        .services-training-copy h2 {
+            margin: 0 0 20px;
+            color: var(--brand);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-wrap: balance;
         }
 
         .services-training-copy p {
-            margin: 0 0 18px;
-            font-size: clamp(1.1rem, 1.3vw, 1.35rem);
-            line-height: 1.55;
+            margin: 0 0 16px;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .services-training-copy ul {
             margin: 0;
             padding-left: 22px;
-            font-size: clamp(1.1rem, 1.3vw, 1.35rem);
-            line-height: 1.55;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .services-training-copy ul li {
             margin-bottom: 4px;
         }
 
+        .services-training-photo {
+            margin: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #e6e7ef;
+            height: 460px;
+            align-self: center;
+        }
+
+        .services-training-section + .services-training-section .services-training-copy {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .services-training-section + .services-training-section .services-training-photo {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .services-training-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 900px) {
+            .services-training-wrap {
+                grid-template-columns: 1fr;
+            }
+            .services-training-photo {
+                min-height: 280px;
+                order: 2;
+            }
+        }
+
         .services-panel-copy h3 {
-            margin: 0 0 16px;
+            margin: 0 0 8px;
             color: var(--brand);
             font-size: clamp(1.8rem, 2.8vw, 3rem);
             font-weight: 600;
@@ -460,24 +488,24 @@
         .services-panel-copy p {
             margin: 0;
             color: var(--muted);
-            font-size: 1.06rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.55;
         }
 
         .services-panel-copy p + p {
-            margin-top: 18px;
+            margin-top: 10px;
         }
 
         .services-panel-copy ul {
-            margin: 0 0 18px;
+            margin: 0 0 10px;
             padding-left: 22px;
             color: var(--muted);
-            font-size: 1.06rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.55;
         }
 
         .services-panel-copy ul li {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .site-footer {
@@ -557,9 +585,10 @@
         .footer-group h3 {
             margin: 0 0 16px;
             font-size: 1.05rem;
-            font-weight: 600;
+            font-weight: 400;
             color: #ffffff;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .footer-links {
@@ -1085,10 +1114,11 @@
         }
 
         /* ── Typography overrides ── */
-        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; }
-        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; }
-        h1 { font-size: 28px !important; }
-        h2, h3 { font-size: 28px !important; }
+        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; line-height: 1.7; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; line-height: 1.7; }
+        h1 { font-size: 34px !important; }
+        h2, h3 { font-size: 34px; }
+        p { line-height: 1.7; }
 
         .about-kicker {
             margin: 0 0 20px;
@@ -1272,10 +1302,8 @@
             </section>
             <section class="services-training-section" aria-label="Training and professional development">
                 <div class="services-training-wrap">
-                    <div class="services-training-banner">
-                        <h2>Training and Professional Development</h2>
-                    </div>
                     <div class="services-training-copy">
+                        <h2>Training and Professional Development</h2>
                         <p>Pivot counselling provides a wealth of professional support for individuals facing a particular need, trauma or relationship issue. However, the best treatment may well be preparation, training us to be prepared for, aware of and able to grow before these events occur.</p>
                         <p>Individual and personal Training can play an important role in strengthening insight, building practical skills, and supporting healthier ways of relating, working, and responding to challenge. At Pivot training we offer a growth and resilience training that is thoughtful, engaging, and grounded in both professional experience and real-world application.</p>
                         <p>Our training can be tailored to a range of settings; workplaces, schools, community organisations, and practitioner groups.</p>
@@ -1289,6 +1317,30 @@
                             <li>Professional development for therapists and helping professionals</li>
                         </ul>
                     </div>
+                    <figure class="services-training-photo">
+                        <img src="DSC09036.jpg" alt="Training and professional development">
+                    </figure>
+                </div>
+            </section>
+            <section class="services-training-section" aria-label="Supervision">
+                <div class="services-training-wrap">
+                    <div class="services-training-copy">
+                        <h2>Supervision</h2>
+                        <p>Pivot Training Supervision offers a reflective and professionally supportive space for practitioners to engage carefully with their professional practice, their clients, and themselves in the midst of practice. It can help strengthen clinical insight, ethical awareness, resilience, and clarity, while also supporting sustainable and responsible care. Professional bodies such as PACFA and ACA frame supervision as a collaborative process that supports practice, professional development, and practitioner wellbeing. Pivot training provides supervision that meets these professional accreditation requirements.</p>
+                        <p>At Pivot, supervision may be offered in individual or group formats and can be shaped to suit counsellors, helping professionals, team leaders, and those working in pastoral or organisational settings. Depending on the context, supervision may focus on clinical work, reflective practice, professional identity, team dynamics, ethical decision-making, workplace pressures, or the relational and emotional demands of caregiving roles.</p>
+                        <p>This may include support with:</p>
+                        <ul>
+                            <li>Individual clinical supervision</li>
+                            <li>Group supervision</li>
+                            <li>Professional or workplace supervision</li>
+                            <li>Pastoral supervision</li>
+                            <li>Reflective practice and ethical decision-making</li>
+                            <li>Sustaining practitioner wellbeing and professional growth</li>
+                        </ul>
+                    </div>
+                    <figure class="services-training-photo">
+                        <img src="DSC09990-2.jpg" alt="Supervision">
+                    </figure>
                 </div>
             </section>
             <section class="faq-section" aria-labelledby="faq-heading">
