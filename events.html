@@ -336,9 +336,10 @@
         .footer-group h3 {
             margin: 0 0 16px;
             font-size: 1.05rem;
-            font-weight: 600;
+            font-weight: 400;
             color: #ffffff;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .footer-links {
@@ -905,7 +906,7 @@
 
         /* ── Newsletter section ── */
         .newsletter-section {
-            width: min(100%, 1380px);
+            width: min(100%, 912px);
             margin: 28px auto 0;
             padding: clamp(56px, 7vw, 96px) clamp(28px, 4vw, 64px);
             background: var(--brand);
@@ -1041,10 +1042,11 @@
         }
 
         /* ── Typography overrides ── */
-        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; }
-        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; }
-        h1 { font-size: 28px !important; }
-        h2, h3 { font-size: 28px !important; }
+        body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; line-height: 1.7; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; line-height: 1.7; }
+        h1 { font-size: 34px !important; }
+        h2, h3 { font-size: 34px; }
+        p { line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -1108,8 +1110,8 @@
             <section class="newsletter-section" aria-label="Newsletter signup">
                 <div class="newsletter-wrap">
                     <div class="newsletter-copy">
-                        <h2 class="newsletter-title">Stay in the loop.</h2>
-                        <p>Subscribe to our newsletter for upcoming events, workshops, and community gatherings.</p>
+                        <h2 class="newsletter-title">Stay connected</h2>
+                        <p>Be the first to hear about upcoming events, insights, and updates from Pivot Counselling &amp; Training.</p>
                     </div>
                     <form class="newsletter-form" novalidate>
                         <label class="visually-hidden" for="newsletter-email">Email address</label>
