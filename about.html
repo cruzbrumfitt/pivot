@@ -244,6 +244,7 @@
             max-width: 400px;
             color: white;
             z-index: 3;
+            text-align: center;
         }
 
         .hero-copy p {
@@ -264,7 +265,7 @@
             display: grid;
             grid-template-columns: minmax(0, 1.08fr) minmax(360px, 1fr);
             gap: clamp(24px, 3vw, 42px);
-            align-items: center;
+            align-items: start;
             max-width: 1480px;
             margin: 0 auto;
             padding: clamp(20px, 2.4vw, 28px);
@@ -505,16 +506,14 @@
         .about-kicker {
             margin: 0 0 20px;
             color: var(--brand);
-            font-size: clamp(1.55rem, 2.35vw, 2.3rem);
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+            font-size: 34px;
+            font-weight: 400;
         }
 
         .about-copy p {
             margin: 0 0 28px;
-            font-size: clamp(1.32rem, 1.95vw, 1.68rem);
-            line-height: 1.38;
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
             color: var(--brand);
         }
 
@@ -524,7 +523,7 @@
 
         .about-gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 16px;
             align-items: stretch;
         }
@@ -537,8 +536,6 @@
 
         .about-photo {
             margin: 0;
-            min-height: 320px;
-            height: 100%;
             overflow: hidden;
             background: #e6e7ef;
             border-radius: 18px;
@@ -553,7 +550,7 @@
         .about-photo-square,
         .about-photo-portrait,
         .about-photo-tall {
-            aspect-ratio: auto;
+            aspect-ratio: 4 / 3;
         }
 
         .about-photo-wide {
@@ -707,9 +704,8 @@
 
         .faq-section h2 {
             margin: 0 0 40px;
-            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-            font-weight: 600;
-            letter-spacing: 0.04em;
+            font-size: 34px;
+            font-weight: 400;
             text-align: center;
             color: var(--brand);
         }
@@ -949,13 +945,10 @@
 
             .about-kicker {
                 margin-bottom: 18px;
-                font-size: 1.5rem;
             }
 
             .about-copy p {
                 margin-bottom: 22px;
-                font-size: clamp(1.06rem, 1.35vw, 1.25rem);
-                line-height: 1.42;
             }
 
             .about-gallery {
@@ -1234,7 +1227,7 @@
                     <div class="hero-slide slide-three"></div>
                 </div>
                 <div class="hero-copy">
-                    <p>About Pivot and the people behind its care, training, and support.</p>
+                    <p>Counselling grounded in clarity, care, and connection.</p>
                 </div>
             </section>
 
@@ -1270,12 +1263,6 @@
 
                     <div class="about-gallery" aria-label="About Pivot image gallery">
                         <figure class="about-photo about-photo-square">
-                            <img src="DSC09121.jpg" alt="Counselling session at Pivot">
-                        </figure>
-                        <figure class="about-photo about-photo-tall">
-                            <img src="DSC09161.jpg" alt="Meeting room discussion at Pivot Counselling">
-                        </figure>
-                        <figure class="about-photo about-photo-wide">
                             <img src="DSC09036.jpg" alt="Pivot counselling space">
                         </figure>
                     </div>
@@ -1664,7 +1651,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Meaningful change with clarity, courage and care.
+                            Counselling grounded in clarity, care, and connection.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
@@ -1679,6 +1666,7 @@
                             <a href="events.html">Events</a>
                             <a href="faq.html">FAQ</a>
                             <a href="contact.html">Contact</a>
+                            <a href="privacy.html">Privacy Policy</a>
                         </div>
                     </div>
 
@@ -1698,15 +1686,15 @@
                         <div class="footer-contact">
                             <div>
                                 <strong>Email</strong>
-                                <a href="mailto:hello@pivotcounselling.com.au">hello@pivotcounselling.com.au</a>
+                                <a href="mailto:hello@pivotct.com.au">hello@pivotct.com.au</a>
                             </div>
                             <div>
                                 <strong>Phone</strong>
-                                <a href="tel:+61400000000">+61 400 000 000</a>
+                                <a href="tel:+61412156966">0412 156 966</a>
                             </div>
                             <div>
                                 <strong>Location</strong>
-                                <span>Adelaide, South Australia</span>
+                                <span>37 Angas Street,<br>Adelaide SA 5000</span>
                             </div>
                         </div>
                     </div>
@@ -1716,7 +1704,7 @@
 
                 <div class="footer-bottom">
                     <span>&copy; 2026 Pivot Counselling and Training. All rights reserved.</span>
-                    <span>ABN: 76 683 197 944</span>
+                    <span>ABN: 12 461 713 660</span>
                 </div>
             </div>
         </footer>

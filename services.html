@@ -233,6 +233,7 @@
             max-width: 400px;
             color: white;
             z-index: 2;
+            text-align: center;
         }
 
         .hero-copy p {
@@ -268,20 +269,20 @@
         }
 
         .services-message-copy p {
-            margin: 0;
-            font-size: clamp(1.32rem, 1.95vw, 1.68rem);
-            line-height: 1.38;
+            margin: 0 0 28px;
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
             color: var(--brand);
         }
 
-        .services-message-copy p + p {
-            margin-top: 24px;
+        .services-message-copy p:last-child {
+            margin-bottom: 0;
         }
 
         .services-message-photo {
             margin: 0;
             min-height: 0;
-            aspect-ratio: 0.82 / 1;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
             background: #e6e7ef;
             align-self: start;
@@ -292,7 +293,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center top;
+            object-position: center bottom;
             display: block;
         }
 
@@ -371,8 +372,10 @@
         }
 
         .services-panel-photo {
-            margin: 0;
+            margin: 0 auto;
+            justify-self: center;
             max-width: 320px;
+            width: 100%;
             aspect-ratio: 1 / 1;
             border-radius: 28px;
             overflow: hidden;
@@ -380,11 +383,12 @@
         }
 
         .services-panel-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
             object-position: center;
             display: block;
+            margin: 5% auto;
         }
 
         .services-panel-copy {
@@ -418,23 +422,22 @@
         .services-training-copy h2 {
             margin: 0 0 20px;
             color: var(--brand);
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+            font-size: 34px;
+            font-weight: 400;
             text-wrap: balance;
         }
 
         .services-training-copy p {
             margin: 0 0 16px;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
         }
 
         .services-training-copy ul {
             margin: 0;
             padding-left: 22px;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
         }
 
         .services-training-copy ul li {
@@ -480,16 +483,16 @@
         .services-panel-copy h3 {
             margin: 0 0 8px;
             color: var(--brand);
-            font-size: clamp(1.8rem, 2.8vw, 3rem);
-            font-weight: 600;
+            font-size: 34px;
+            font-weight: 400;
             line-height: 1.08;
         }
 
         .services-panel-copy p {
             margin: 0;
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.55;
+            color: var(--brand);
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
         }
 
         .services-panel-copy p + p {
@@ -499,13 +502,18 @@
         .services-panel-copy ul {
             margin: 0 0 10px;
             padding-left: 22px;
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.55;
+            color: var(--brand);
+            font-size: clamp(1rem, 1.25vw, 1.22rem);
+            line-height: 1.18;
         }
 
         .services-panel-copy ul li {
             margin-bottom: 2px;
+            color: var(--brand);
+        }
+
+        .services-panel-copy ul li::marker {
+            color: var(--brand);
         }
 
         .site-footer {
@@ -654,9 +662,8 @@
 
         .faq-section h2 {
             margin: 0 0 40px;
-            font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-            font-weight: 600;
-            letter-spacing: 0.04em;
+            font-size: 34px;
+            font-weight: 400;
             text-align: center;
             color: var(--brand);
         }
@@ -842,8 +849,7 @@
             }
 
             .services-message-copy p {
-                font-size: clamp(1.06rem, 1.35vw, 1.25rem);
-                line-height: 1.42;
+                margin-bottom: 22px;
             }
 
             .services-topics {
@@ -881,11 +887,7 @@
             }
 
             .services-panel-copy h3 {
-                font-size: clamp(1.6rem, 8vw, 2.4rem);
-            }
-
-            .services-panel-copy p {
-                font-size: 1rem;
+                font-size: 34px;
             }
 
             .site-footer {
@@ -1123,9 +1125,8 @@
         .about-kicker {
             margin: 0 0 20px;
             color: var(--brand);
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
+            font-size: 34px;
+            font-weight: 400;
         }
     </style>
 </head>
@@ -1170,13 +1171,13 @@
                     <div class="hero-slide services-slide"></div>
                 </div>
                 <div class="hero-copy">
-                    <p>Explore the services Pivot offers</p>
+                    <p>Counselling grounded in clarity, care, and connection.</p>
                 </div>
             </section>
             <section class="services-message-section" aria-label="Services message">
                 <div class="services-message-wrap">
                     <div class="services-message-copy">
-                        <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training.</h1>
+                        <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training</h1>
                         <p>At Pivot Counselling &amp; Training, we offer counselling in a safe, respectful, and supportive environment where you can slow down and make sense of what you are experiencing. We understand that reaching out can feel like a significant step, and our aim is to create a space where you feel heard, understood, and supported. Whether you or a loved one are navigating anxiety, low mood, relationship difficulties, grief, or major life transitions, we work collaboratively with you to find a way forward that feels meaningful and supportive.</p>
                         <p>We are delighted to welcome you and hope this page gives you a sense of who we are, what we value, and how we may be able to support you.</p>
                     </div>
@@ -1198,7 +1199,7 @@
                         <div class="services-panels">
                             <article class="services-panel is-active" role="tabpanel" id="topic-anxiety" aria-labelledby="tab-anxiety">
                                 <figure class="services-panel-photo">
-                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
+                                    <img src="brain.svg" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Anxiety, Stress &amp; Trauma</h3>
@@ -1217,7 +1218,7 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-depression" aria-labelledby="tab-depression" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
+                                    <img src="brain.svg" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Depression &amp; Low Mood</h3>
@@ -1236,7 +1237,7 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-grief" aria-labelledby="tab-grief" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
+                                    <img src="brain.svg" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Grief &amp; Loss</h3>
@@ -1254,7 +1255,7 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-relationships" aria-labelledby="tab-relationships" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
+                                    <img src="brain.svg" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Marriage &amp; Relationships</h3>
@@ -1276,7 +1277,7 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-family" aria-labelledby="tab-family" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="https://auscounselling.com.au/wp-content/uploads/2024/12/service-illustration-1-2.webp" alt="Service illustration">
+                                    <img src="brain.svg" alt="Service illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Child, Adolescent &amp; Family</h3>
@@ -1424,7 +1425,7 @@
                             <span>Counselling and Training</span>
                         </div>
                         <p>
-                            Meaningful change with clarity, courage and care.
+                            Counselling grounded in clarity, care, and connection.
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
@@ -1439,6 +1440,7 @@
                             <a href="events.html">Events</a>
                             <a href="faq.html">FAQ</a>
                             <a href="contact.html">Contact</a>
+                            <a href="privacy.html">Privacy Policy</a>
                         </div>
                     </div>
 
@@ -1458,15 +1460,15 @@
                         <div class="footer-contact">
                             <div>
                                 <strong>Email</strong>
-                                <a href="mailto:hello@pivotcounselling.com.au">hello@pivotcounselling.com.au</a>
+                                <a href="mailto:hello@pivotct.com.au">hello@pivotct.com.au</a>
                             </div>
                             <div>
                                 <strong>Phone</strong>
-                                <a href="tel:+61400000000">+61 400 000 000</a>
+                                <a href="tel:+61412156966">0412 156 966</a>
                             </div>
                             <div>
                                 <strong>Location</strong>
-                                <span>Adelaide, South Australia</span>
+                                <span>37 Angas Street,<br>Adelaide SA 5000</span>
                             </div>
                         </div>
                     </div>
@@ -1476,7 +1478,7 @@
 
                 <div class="footer-bottom">
                     <span>&copy; 2026 Pivot Counselling and Training. All rights reserved.</span>
-                    <span>ABN: 76 683 197 944</span>
+                    <span>ABN: 12 461 713 660</span>
                 </div>
             </div>
         </footer>

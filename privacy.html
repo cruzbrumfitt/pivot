@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Pivot Counselling and Training</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #fffdf9;
+            --brand: #2c317d;
+            --brand-soft: rgba(44, 49, 125, 0.18);
+            --text: #2c317d;
+            --muted: #6d7193;
+            --shadow: 0 22px 60px rgba(38, 44, 95, 0.12);
+            --radius: 28px;
+            --page-gutter: clamp(16px, 2.4vw, 28px);
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; }
+
+        body {
+            margin: 0;
+            font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+            line-height: 1.7;
+        }
+        h1 { font-size: 34px; }
+        h2, h3 { font-size: 34px; }
+
+        .page-shell {
+            width: min(100%, 1600px);
+            margin: 0 auto;
+            padding: 6px 0 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #FAFAFA;
+        }
+
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 4px var(--page-gutter) 14px;
+        }
+
+        .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+
+        .brand-wordmark {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 0.88;
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            color: var(--brand);
+        }
+
+        .brand-wordmark strong {
+            font-size: clamp(2.35rem, 4.7vw, 3.75rem);
+            font-weight: 300;
+        }
+
+        .brand-wordmark span {
+            margin-top: 4px;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .brand-copy {
+            transform: translateY(-4px);
+            font-size: clamp(0.88rem, 1.1vw, 1.15rem);
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            line-height: 1.25;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-cluster { display: flex; align-items: center; gap: 22px; }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: clamp(14px, 1.55vw, 28px);
+            font-size: clamp(0.88rem, 1.02vw, 1.05rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .site-nav a { position: relative; padding-bottom: 4px; }
+
+        .site-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--brand);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 180ms ease;
+        }
+
+        .site-nav a.is-active::after,
+        .site-nav a:hover::after,
+        .site-nav a:focus-visible::after { transform: scaleX(1); }
+
+        .book-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: 3px solid var(--brand);
+            border-radius: 999px;
+            padding: 7px 16px 7px 7px;
+            background: rgba(255, 255, 255, 0.92);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            box-shadow: 0 10px 24px rgba(44, 49, 125, 0.08);
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .book-button:hover, .book-button:focus-visible {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(44, 49, 125, 0.14);
+        }
+
+        .book-icon {
+            width: 38px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--brand);
+            color: white;
+            line-height: 1;
+        }
+
+        .book-icon svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 3;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        main {
+            flex: 1 0 auto;
+            background: #FAFAFA;
+        }
+
+        .privacy-wrap {
+            width: min(100%, 900px);
+            margin: 36px auto 80px;
+            padding: 0 22px;
+        }
+
+        .privacy-wrap h1 {
+            margin: 0 0 16px;
+            color: var(--brand);
+        }
+
+        .privacy-wrap .updated {
+            margin: 0 0 36px;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .privacy-wrap h2 {
+            margin: 36px 0 12px;
+            color: var(--brand);
+            font-size: 22px;
+        }
+
+        .privacy-wrap p {
+            margin: 0 0 16px;
+            color: #4f566f;
+        }
+
+        .privacy-wrap ul {
+            margin: 0 0 16px;
+            padding-left: 22px;
+            color: #4f566f;
+        }
+
+        .privacy-wrap li { margin-bottom: 8px; }
+
+        .privacy-wrap a {
+            color: var(--brand);
+            text-decoration: underline;
+        }
+
+        .site-footer {
+            width: 100vw;
+            margin-top: 28px;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            border-radius: 36px 36px 0 0;
+            padding: 58px 42px 28px;
+            background: #2c317d;
+            color: #ffffff;
+            box-shadow: var(--shadow);
+        }
+
+        .footer-inner { width: min(100%, 1280px); margin: 0 auto; }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.55fr 0.8fr 0.9fr 0.8fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .footer-brand { max-width: 390px; }
+
+        .footer-mark {
+            display: inline-flex;
+            flex-direction: column;
+            line-height: 0.9;
+            color: #ffffff;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-mark strong {
+            font-size: clamp(2rem, 3vw, 2.65rem);
+            font-weight: 300;
+        }
+
+        .footer-mark span {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .footer-brand p {
+            margin: 18px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.55;
+            max-width: 340px;
+        }
+
+        .footer-accreditation {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .footer-sa-logo { width: 128px; height: auto; flex: 0 0 auto; }
+
+        .footer-group h3 {
+            margin: 0 0 16px;
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .footer-links { display: grid; gap: 10px; }
+
+        .footer-links a, .footer-contact a, .footer-contact span {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.98rem;
+            line-height: 1.35;
+            transition: color 180ms ease, transform 180ms ease;
+        }
+
+        .footer-links a:hover, .footer-links a:focus-visible,
+        .footer-contact a:hover, .footer-contact a:focus-visible {
+            color: #ffffff;
+            transform: translateX(2px);
+        }
+
+        .footer-contact { display: grid; gap: 10px; }
+
+        .footer-contact strong {
+            display: block;
+            margin-bottom: 3px;
+            color: #ffffff;
+            font-size: 0.76rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .footer-divider {
+            height: 1px;
+            margin: 26px 0 16px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.92rem;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .nav-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            padding: 0;
+            border: 2px solid var(--brand);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--brand);
+            cursor: pointer;
+            transition: transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .nav-toggle:hover, .nav-toggle:focus-visible {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 22px rgba(44, 49, 125, 0.18);
+            outline: none;
+        }
+
+        .nav-toggle-bars {
+            position: relative;
+            width: 20px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            display: block;
+            transition: background 180ms ease;
+        }
+
+        .nav-toggle-bars::before, .nav-toggle-bars::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: transform 220ms ease, top 220ms ease;
+        }
+
+        .nav-toggle-bars::before { top: -6px; }
+        .nav-toggle-bars::after  { top:  6px; }
+
+        body.nav-open .nav-toggle-bars { background: transparent; }
+        body.nav-open .nav-toggle-bars::before { top: 0; transform: rotate(45deg); }
+        body.nav-open .nav-toggle-bars::after  { top: 0; transform: rotate(-45deg); }
+
+        @media (max-width: 1120px) {
+            .site-header { flex-wrap: wrap; gap: 16px; }
+            .nav-cluster { gap: 14px; flex-wrap: nowrap; }
+            .site-nav {
+                gap: clamp(10px, 1.6vw, 20px);
+                font-size: clamp(0.82rem, 1.25vw, 1rem);
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .footer-main { grid-template-columns: 1.2fr 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; max-width: 520px; }
+        }
+
+        @media (max-width: 900px) {
+            .site-header {
+                position: relative;
+                padding: 10px var(--page-gutter);
+                gap: 12px;
+            }
+            .brand-wordmark strong { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
+            .brand-wordmark span { font-size: 1rem; }
+            .brand-copy { font-size: clamp(0.7rem, 2.2vw, 0.86rem); letter-spacing: 0.1em; }
+            .nav-toggle { display: inline-flex; }
+            .nav-cluster { margin-left: auto; gap: 10px; }
+            .site-header .site-nav {
+                position: absolute;
+                top: 100%;
+                left: var(--page-gutter);
+                right: var(--page-gutter);
+                z-index: 40;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px 4px;
+                background: #fff;
+                border-radius: 20px;
+                box-shadow: 0 22px 48px rgba(38, 44, 95, 0.18);
+                opacity: 0;
+                transform: translateY(-8px);
+                pointer-events: none;
+                transition: opacity 200ms ease, transform 200ms ease;
+            }
+            body.nav-open .site-header .site-nav {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+            .site-header .site-nav a {
+                display: block;
+                padding: 14px 18px;
+                font-size: 1rem;
+                border-radius: 12px;
+            }
+            .site-header .site-nav a::after { display: none; }
+            .site-header .site-nav a.is-active,
+            .site-header .site-nav a:hover { background: rgba(44, 49, 125, 0.08); }
+            .book-button {
+                padding: 5px 12px 5px 5px;
+                font-size: 0.82rem;
+                gap: 8px;
+                border-width: 2px;
+            }
+            .book-icon { width: 32px; }
+            .book-icon svg { width: 13px; height: 13px; }
+            .footer-main { grid-template-columns: 1fr !important; gap: 24px !important; }
+            .site-footer { padding: 36px 22px 24px; border-radius: 22px 22px 0 0; }
+            .footer-bottom { flex-direction: column; align-items: center; }
+        }
+
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .footer-main { grid-template-columns: 1fr 1fr !important; }
+            .footer-brand { grid-column: 1 / -1 !important; }
+        }
+
+        @media (max-width: 480px) {
+            .book-button { padding: 4px 12px 4px 4px; font-size: 0.72rem; gap: 6px; border-width: 2px; }
+            .book-icon { width: 28px; }
+            .book-icon svg { width: 11px; height: 11px; }
+            .brand-copy { display: none; }
+        }
+
+        @media (min-width: 1500px) { .page-shell { width: min(100%, 1880px); } }
+        @media (min-width: 1900px) { .page-shell { width: min(100%, 2200px); } }
+        @media (min-width: 2400px) { .page-shell { width: min(100%, 2600px); } }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
+                <div class="brand-wordmark" aria-hidden="true">
+                    <strong>PIVOT</strong>
+                    <span>&#9650;</span>
+                </div>
+                <div class="brand-copy">Counselling<br>and Training</div>
+            </a>
+
+            <div class="nav-cluster">
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="events.html">Events</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <a class="book-button" href="contact.html">
+                    <span class="book-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </span>
+                    <span>Book Now</span>
+                </a>
+
+                <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+                    <span class="nav-toggle-bars" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+
+        <main aria-label="Privacy policy">
+            <section class="privacy-wrap">
+                <h1>Privacy Policy</h1>
+                <p class="updated">Last updated: 1 May 2026</p>
+
+                <p>Pivot Counselling and Training ("Pivot", "we", "us") is committed to protecting your privacy and handling your personal information in accordance with the Australian Privacy Principles set out in the <em>Privacy Act 1988</em> (Cth).</p>
+
+                <h2>Information we collect</h2>
+                <p>We may collect personal information you provide to us directly, including:</p>
+                <ul>
+                    <li>Name, contact details, and date of birth</li>
+                    <li>Health information relevant to your care</li>
+                    <li>Referral, Medicare, NDIS or insurance details</li>
+                    <li>Records of communications, sessions and appointments</li>
+                </ul>
+
+                <h2>How we use your information</h2>
+                <p>Your information is used to provide counselling and training services, to communicate with you about appointments, to process payments, to comply with our legal and professional obligations, and to improve the quality of our services.</p>
+
+                <h2>Disclosure</h2>
+                <p>We do not sell your personal information. We may share information with your treating practitioner, your GP or referring clinician (with your consent), or where required or authorised by law.</p>
+
+                <h2>Storage and security</h2>
+                <p>Records are stored securely in Australia using protected practice-management systems. Access is limited to authorised staff. We retain records for the period required by law.</p>
+
+                <h2>Your rights</h2>
+                <p>You may request access to or correction of the personal information we hold about you. You may also withdraw consent at any time, subject to legal and professional record-keeping requirements.</p>
+
+                <h2>Cookies and the website</h2>
+                <p>This website uses minimal cookies to support core functionality. We do not use cookies to identify individual visitors.</p>
+
+                <h2>Contact</h2>
+                <p>If you have a question or complaint about how we handle your information, please contact us at <a href="mailto:hello@pivotct.com.au">hello@pivotct.com.au</a> or <a href="tel:+61412156966">0412 156 966</a>. Unresolved complaints can be referred to the Office of the Australian Information Commissioner at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a>.</p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-mark" aria-hidden="true">
+                            <strong>PIVOT</strong>
+                            <span>Counselling and Training</span>
+                        </div>
+                        <p>
+                            Counselling grounded in clarity, care, and connection.
+                        </p>
+                        <div class="footer-accreditation">
+                            <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Pages</h3>
+                        <div class="footer-links">
+                            <a href="about.html">About Us</a>
+                            <a href="services.html">Services</a>
+                            <a href="events.html">Events</a>
+                            <a href="faq.html">FAQ</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="privacy.html">Privacy Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Services</h3>
+                        <div class="footer-links">
+                            <a href="services.html">Individual Counselling</a>
+                            <a href="services.html">Training Programs</a>
+                            <a href="services.html">Workshops</a>
+                            <a href="services.html">Resources</a>
+                            <a href="contact.html">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-group">
+                        <h3>Contact</h3>
+                        <div class="footer-contact">
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:hello@pivotct.com.au">hello@pivotct.com.au</a>
+                            </div>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+61412156966">0412 156 966</a>
+                            </div>
+                            <div>
+                                <strong>Location</strong>
+                                <span>37 Angas Street,<br>Adelaide SA 5000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-divider" aria-hidden="true"></div>
+
+                <div class="footer-bottom">
+                    <span>&copy; 2026 Pivot Counselling and Training. All rights reserved.</span>
+                    <span>ABN: 12 461 713 660</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var nav = document.querySelector('.site-header .site-nav');
+            if (!toggle || !nav) return;
+            function setOpen(open) {
+                document.body.classList.toggle('nav-open', open);
+                toggle.setAttribute('aria-expanded', String(open));
+            }
+            toggle.addEventListener('click', function () {
+                setOpen(!document.body.classList.contains('nav-open'));
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+            var mql = window.matchMedia('(min-width: 901px)');
+            mql.addEventListener('change', function (e) { if (e.matches) setOpen(false); });
+        })();
+    </script>
+</body>
+</html>
