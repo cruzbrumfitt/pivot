@@ -398,8 +398,15 @@
         }
 
         .home-service-card {
+            display: block;
             text-align: center;
             color: var(--brand);
+            text-decoration: none;
+            transition: transform 200ms ease;
+        }
+
+        .home-service-card:hover {
+            transform: translateY(-3px);
         }
 
         .home-service-media {
@@ -457,14 +464,13 @@
 
         .home-team-banner h2 {
             margin: 0;
-            color: white;
+            color: var(--brand);
             font-size: 34px;
             font-style: normal;
             font-weight: 400;
             line-height: 1.12;
             letter-spacing: -0.02em;
             text-wrap: balance;
-            text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
             text-align: center;
             max-width: 460px;
         }
@@ -1414,12 +1420,8 @@
                 <div class="home-brian-wrap">
                     <div class="home-brian-copy">
                         <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training.</h1>
-                        <p>Thank you for visiting our website.</p>
-                        <p>Pivot was created out of a desire to offer a space that is professional, welcoming, and deeply human &mdash; a place where people can access thoughtful counselling, meaningful support, and genuine care.</p>
-                        <p>At the heart of Pivot is a team of independent practitioners who share a commitment to ethical practice, relational depth, and the belief that meaningful change is possible.</p>
-                        <p>Whether you are seeking counselling, supervision, or professional development, we hope you encounter a practice marked by clarity, courage, compassion, and integrity.</p>
-                        <p>My hope in establishing Pivot has been to create not only a place of care for clients, but also a community of practitioners committed to reflection, growth, and working well with others.</p>
-                        <p>We are delighted to welcome you and hope this website gives you a sense of who we are, what we value, and how we may be able to support you.</p>
+                        <p>Thank you for visiting our website. Pivot was created out of a desire to offer a space that is professional, welcoming, and deeply human &mdash; a place where people can access thoughtful counselling, meaningful support, and genuine care. At the heart of Pivot is a team of independent practitioners who share a commitment to ethical practice, relational depth, and the belief that meaningful change is possible.</p>
+                        <p>Whether you are seeking counselling, supervision, or professional development, we hope you encounter a practice marked by clarity, courage, compassion, and integrity. My hope in establishing Pivot has been to create not only a place of care for clients, but also a community of practitioners committed to reflection, growth, and working well with others. We are delighted to welcome you and hope this website gives you a sense of who we are, what we value, and how we may be able to support you.</p>
                         <p>&mdash; Brian Gabriels<br>Founder &amp; Practice Director</p>
                     </div>
                     <div class="home-brian-photo">
@@ -1430,27 +1432,27 @@
             <section class="home-services-section" aria-label="Pivot services overview">
                 <div class="home-services-wrap">
                     <div class="home-services-grid">
-                        <article class="home-service-card">
+                        <a class="home-service-card" href="services.html#counselling">
                             <figure class="home-service-media">
                                 <img src="counseilling.jpg" alt="Counselling session at Pivot">
                             </figure>
                             <h3>Counselling</h3>
                             <p>Our services include: anxiety, stress, trauma, depression, low mood, grief and loss, child and adolescent, family and relationship.</p>
-                        </article>
-                        <article class="home-service-card">
+                        </a>
+                        <a class="home-service-card" href="services.html#training">
                             <figure class="home-service-media">
                                 <img src="training.jpg" alt="Training session around a meeting table">
                             </figure>
                             <h3>Training</h3>
                             <p>Our training can be tailored to a range of settings, including workplaces, schools, community organisations, and practitioner groups.</p>
-                        </article>
-                        <article class="home-service-card">
+                        </a>
+                        <a class="home-service-card" href="services.html#supervision">
                             <figure class="home-service-media">
                                 <img src="supervising.jpg" alt="Brian seated in a supervision setting">
                             </figure>
                             <h3>Supervision</h3>
                             <p>Our supervision is tailored to suit counsellors, professionals, team leaders, and those working in pastoral or organisational settings.</p>
-                        </article>
+                        </a>
                     </div>
                 </div>
             </section>
