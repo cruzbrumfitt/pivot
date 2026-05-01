@@ -904,11 +904,9 @@
         /* ── Newsletter section ── */
         .newsletter-section {
             width: min(100%, 720px);
-            margin: 28px auto 0;
-            padding: clamp(36px, 4.5vw, 60px) clamp(22px, 3vw, 44px);
-            background: var(--brand);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
+            margin: 0 auto;
+            padding: 18px clamp(22px, 3vw, 44px) 24px;
+            background: transparent;
             text-align: center;
         }
 
@@ -922,7 +920,7 @@
 
         .newsletter-title {
             margin: 0 0 14px;
-            color: #ffffff;
+            color: var(--brand);
             font-weight: 400;
             font-size: 34px !important;
             line-height: 1.7;
@@ -935,7 +933,7 @@
 
         .newsletter-copy p {
             margin: 0;
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--brand);
             font-size: 1.05rem;
             line-height: 1.55;
         }
@@ -1126,7 +1124,7 @@
             </section>
 
             <section class="faq-section" aria-labelledby="faq-heading">
-                <h2 id="faq-heading" class="visually-hidden">Frequently Asked Questions</h2>
+                <h2 id="faq-heading">Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
@@ -1228,11 +1226,10 @@
                     <div class="footer-group">
                         <h3>Services</h3>
                         <div class="footer-links">
-                            <a href="services.html">Individual Counselling</a>
-                            <a href="services.html">Training Programs</a>
-                            <a href="services.html">Workshops</a>
-                            <a href="services.html">Resources</a>
-                            <a href="contact.html">Book Now</a>
+                            <a href="services.html">Counselling</a>
+                            <a href="services.html">Training</a>
+                            <a href="services.html">Supervision</a>
+                            <a href="contact.html">Booking</a>
                         </div>
                     </div>
 

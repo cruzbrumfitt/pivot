@@ -333,9 +333,9 @@
 
         .home-brian-wrap {
             display: grid;
-            grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.84fr);
+            grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
             gap: clamp(24px, 3vw, 42px);
-            align-items: stretch;
+            align-items: center;
             max-width: 1480px;
             width: 100%;
             margin: 0 auto;
@@ -363,9 +363,12 @@
             margin: 0;
             min-height: 0;
             aspect-ratio: 0.82 / 1;
+            max-width: 420px;
+            width: 100%;
+            justify-self: end;
             overflow: hidden;
             background: #e6e7ef;
-            align-self: start;
+            align-self: center;
             border-radius: 28px;
         }
 
@@ -456,7 +459,7 @@
             margin: 0;
             color: white;
             font-size: 34px;
-            font-style: italic;
+            font-style: normal;
             font-weight: 400;
             line-height: 1.12;
             letter-spacing: -0.02em;
@@ -464,15 +467,6 @@
             text-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
             text-align: center;
             max-width: 460px;
-        }
-
-        .home-team-banner h2::after {
-            content: "";
-            display: block;
-            width: 68px;
-            height: 2px;
-            margin: 18px auto 0;
-            background: rgba(255, 255, 255, 0.7);
         }
 
         .home-team-grid {
@@ -1827,11 +1821,10 @@
                     <div class="footer-group">
                         <h3>Services</h3>
                         <div class="footer-links">
-                            <a href="services.html">Individual Counselling</a>
-                            <a href="services.html">Training Programs</a>
-                            <a href="services.html">Workshops</a>
-                            <a href="services.html">Resources</a>
-                            <a href="contact.html">Book Now</a>
+                            <a href="services.html">Counselling</a>
+                            <a href="services.html">Training</a>
+                            <a href="services.html">Supervision</a>
+                            <a href="contact.html">Booking</a>
                         </div>
                     </div>
 
