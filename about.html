@@ -91,7 +91,6 @@
             margin-top: 4px;
             font-size: 1.35rem;
             line-height: 1;
-            transform: translateX(-0.55em);
         }
 
         .brand-copy {
@@ -396,6 +395,32 @@
             box-shadow: 0 14px 30px rgba(44, 49, 125, 0.18);
         }
 
+        .team-cta-row {
+            margin: auto auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .team-cta-row .team-link {
+            margin: 0;
+        }
+
+        .team-link-secondary {
+            background: transparent;
+            color: var(--brand);
+            border: 2px solid var(--brand);
+            padding: 10px 22px;
+        }
+
+        .team-link-secondary:hover,
+        .team-link-secondary:focus-visible {
+            background: var(--brand);
+            color: #ffffff;
+        }
+
         .bio-modal[hidden] {
             display: none;
         }
@@ -521,12 +546,15 @@
             padding: 11px 24px;
             background: var(--brand);
             color: #fff;
+            border: 0;
             border-radius: 999px;
             text-decoration: none;
+            font-family: inherit;
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.06em;
             text-transform: uppercase;
+            cursor: pointer;
             transition: transform 180ms ease, box-shadow 180ms ease;
         }
 
@@ -1278,28 +1306,10 @@
                     <div class="about-copy">
                         <h1 class="about-kicker" id="about-heading">About Pivot Counselling and Training</h1>
                         <p>
-                            Pivot Counselling &amp; Training is an Adelaide-based practice offering thoughtful,
-                            evidence-informed counselling, supervision, and professional development. We work with individuals and practitioners who
-                            are navigating life&apos;s challenges, transitions, and complexities, offering a space
-                            grounded in respect, collaboration, and genuine care.
-                        </p>
-                        <p>
-                            Our approach is relational at its core. We recognise that meaningful change does not come
-                            from technique alone, but through the quality of the therapeutic relationship, where people
-                            feel heard, understood, and supported. We aim to create an environment where individuals can
-                            explore their experiences with clarity, develop new perspectives, and move toward what
-                            matters most.
-                        </p>
-                        <p>
-                            At Pivot, we support a wide range of concerns, including anxiety, stress, grief and loss,
-                            relationship challenges, and major life transitions. We also work alongside practitioners
-                            through supervision and training, fostering reflective, ethical, and sustainable practice.
-                        </p>
-                        <p>
-                            Our work is guided by a commitment to psychological wellbeing, professional integrity, and
-                            human dignity. We value curiosity, flexibility, and ongoing learning, and we understand
-                            that growth often unfolds over time, through consistent engagement and meaningful
-                            connection.
+                            Pivot Counselling and Training is an Adelaide-based practice offering thoughtful,
+                            evidence-informed counselling, supervision, and professional development. We work with
+                            people who are navigating life&apos;s challenges, transitions, and complexities, offering
+                            a space grounded in respect, collaboration, and genuine care.
                         </p>
                     </div>
 
@@ -1329,7 +1339,10 @@
                                 grandchildren, regular exercise, and good reading, all of which reflect his commitment
                                 to growth, reflection, and living well.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-brian">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-brian">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
 
                         <article class="team-card">
@@ -1345,7 +1358,10 @@
                                 strengths to move towards growth. Outside of her work, she values time with her family,
                                 being in nature, and a good cup of tea.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-wendy">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-wendy">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
 
                         <article class="team-card">
@@ -1360,7 +1376,10 @@
                                 values music, time outdoors, and the everyday moments of blended family life, all of
                                 which inform his grounded, practical, and deeply human approach.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-tim">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-tim">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
 
                         <article class="team-card">
@@ -1376,7 +1395,10 @@
                                 is compassionate, practical, and evidence-based, supporting meaningful change and a
                                 deeper sense of embodied authenticity.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-hannah">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-hannah">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
 
                         <article class="team-card">
@@ -1391,7 +1413,10 @@
                                 committed to building genuine therapeutic relationships where you feel truly
                                 heard, safe, and supported in care tailored to your individual needs.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-nat">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-nat">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
 
                         <article class="team-card">
@@ -1407,7 +1432,10 @@
                                 trauma, and life transitions. She also works at Headspace as a Mental Health Clinician,
                                 supporting young people and families.
                             </p>
-                            <button class="team-link" type="button" data-modal="bio-esther">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-esther">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                     </div>
                 </section>
@@ -1534,6 +1562,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Brian to book a session:</p>
                     <p>Mobile: <a href="tel:+61412156966">0412 156 966</a><br>Email: <a href="mailto:brian@pivotct.com.au">brian@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1587,6 +1616,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Wendy to book a session:</p>
                     <p>Mobile: <a href="tel:+61494002633">0494 002 633</a><br>Email: <a href="mailto:wendy@pivotct.com.au">wendy@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1637,6 +1667,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Tim to book a session:</p>
                     <p>Mobile: <a href="tel:+61411046414">0411 046 414</a><br>Email: <a href="mailto:tim@pivotct.com.au">tim@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1693,6 +1724,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Hannah to book a session:</p>
                     <p>Mobile: <a href="tel:+61428466058">0428 466 058</a><br>Email: <a href="mailto:hannah@pivotct.com.au">hannah@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1742,6 +1774,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Nat to book a session:</p>
                     <p>Mobile: <a href="tel:+61448297863">0448 297 863</a><br>Email: <a href="mailto:nat@pivotct.com.au">nat@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>

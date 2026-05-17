@@ -91,7 +91,6 @@
             margin-top: 4px;
             font-size: 1.35rem;
             line-height: 1;
-            transform: translateX(-0.55em);
         }
 
         .brand-copy {
@@ -558,6 +557,36 @@
             box-shadow: 0 14px 30px rgba(44, 49, 125, 0.18);
         }
 
+        .team-cta-row {
+            margin: auto auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .team-cta-row .team-link {
+            margin: 0;
+        }
+
+        .home-team-card .team-cta-row .team-link {
+            margin-top: 0;
+        }
+
+        .team-link-secondary {
+            background: transparent;
+            color: var(--brand);
+            border: 2px solid var(--brand);
+            padding: 10px 22px;
+        }
+
+        .team-link-secondary:hover,
+        .team-link-secondary:focus-visible {
+            background: var(--brand);
+            color: #ffffff;
+        }
+
         .bio-modal[hidden] {
             display: none;
         }
@@ -683,12 +712,15 @@
             padding: 11px 24px;
             background: var(--brand);
             color: #fff;
+            border: 0;
             border-radius: 999px;
             text-decoration: none;
+            font-family: inherit;
             font-weight: 600;
             font-size: 0.85rem;
             letter-spacing: 0.06em;
             text-transform: uppercase;
+            cursor: pointer;
             transition: transform 180ms ease, box-shadow 180ms ease;
         }
 
@@ -1463,8 +1495,6 @@
                     <div class="home-brian-copy">
                         <h1 class="about-kicker">Welcome to Pivot Counselling and Training</h1>
                         <p>Thank you for visiting our website. Pivot was created out of a desire to offer a professional, welcoming, and deeply human space in central Adelaide &mdash; a place where people can access thoughtful counselling, meaningful support, and genuine care. At the heart of Pivot is a team of independent practitioners who share a commitment to ethical practice, relational depth, and the belief that meaningful change is possible.</p>
-                        <p>Whether you are seeking counselling, supervision, or professional development, we hope you encounter a practice marked by clarity, courage, compassion, and integrity. My hope in establishing Pivot has been to create not only a place of care for clients, but also a community of practitioners committed to reflection, growth, and working well with others. We are delighted to welcome you and hope this website gives you a sense of who we are, what we value, and how we may be able to support you.</p>
-                        <p>&mdash; Brian Gabriels<br>Founder &amp; Practice Director</p>
                     </div>
                     <div class="home-brian-photo">
                         <img src="boss.jpg" alt="Brian Gabriels standing in a suit">
@@ -1510,7 +1540,10 @@
                             </figure>
                             <h3 class="home-team-name">Brian Gabriels</h3>
                             <p class="home-team-bio">Brian brings a calm, thoughtful, and deeply grounded presence to his work, shaped by more than 30 years of counselling, supervision, and training counsellors in higher education. Outside the therapy room, he values meaningful relationships, time with his grandchildren, regular exercise, and good reading, all of which reflect his commitment to growth, reflection, and living well.</p>
-                            <button class="team-link" type="button" data-modal="bio-brian">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-brian">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
@@ -1518,7 +1551,10 @@
                             </figure>
                             <h3 class="home-team-name">Wendy Lin</h3>
                             <p class="home-team-bio">Wendy offers a reflective and compassionate space to explore the challenges facing individuals and couples. Shaped by decades alongside people in ministry contexts, she supports clients to make sense of life&rsquo;s complexities and draw on their strengths to move towards growth. Outside of her work, she values time with her family, being in nature, and a good cup of tea.</p>
-                            <button class="team-link" type="button" data-modal="bio-wendy">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-wendy">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
@@ -1526,7 +1562,10 @@
                             </figure>
                             <h3 class="home-team-name">Tim Pearson</h3>
                             <p class="home-team-bio">Tim brings a steady, down-to-earth approach to his work, shaped by years of supporting people through complex life experiences. Outside the therapy room, he values music, time outdoors, and the everyday moments of blended family life &ndash; all of which inform his grounded, practical, and deeply human approach.</p>
-                            <button class="team-link" type="button" data-modal="bio-tim">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-tim">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
@@ -1534,7 +1573,10 @@
                             </figure>
                             <h3 class="home-team-name">Hannah Mellier</h3>
                             <p class="home-team-bio">Hannah brings a warm, grounded approach to her work with children, adolescents, and young women. With a background in counselling and education, and experience in specialist eating disorder services, she offers a safe, collaborative space. Her work is compassionate, practical, and evidence-based, supporting meaningful change and a deeper sense of embodied authenticity.</p>
-                            <button class="team-link" type="button" data-modal="bio-hannah">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-hannah">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
@@ -1542,7 +1584,10 @@
                             </figure>
                             <h3 class="home-team-name">Nathanael Reuss</h3>
                             <p class="home-team-bio">Nat Reuss is an Adelaide-based counsellor specialising in grief, loss, workplace abuse, and trauma recovery. With over 20 years of pastoral experience, Nat is committed to building genuine therapeutic relationships where you feel truly heard, safe, and supported in care tailored to your individual needs.</p>
-                            <button class="team-link" type="button" data-modal="bio-nat">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-nat">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                         <article class="home-team-card">
                             <figure class="home-team-portrait">
@@ -1550,7 +1595,10 @@
                             </figure>
                             <h3 class="home-team-name">Esther Buckler</h3>
                             <p class="home-team-bio">Esther is a Psychotherapist and Mental Health Social Worker who creates a safe, compassionate space where clients feel understood and supported. She works with adults, young people, and parents, helping them manage anxiety, stress, grief, trauma, and life transitions. She also works at Headspace as a Mental Health Clinician, supporting young people and families.</p>
-                            <button class="team-link" type="button" data-modal="bio-esther">Read More</button>
+                            <div class="team-cta-row">
+                                <button class="team-link" type="button" data-modal="bio-esther">Read More</button>
+                                <button class="team-link team-link-secondary" type="button">Book Now</button>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -1642,7 +1690,7 @@
                 <p class="bio-modal-role">Director</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Brian&apos;s professional background spans many years of counselling, clinical supervision, and training counsellors in higher education. This breadth of experience shapes a practice marked by calm, compassion, and thoughtful reflection. He has worked extensively with people navigating anxiety, loss, relationship challenges, life transitions, and the broader complexity of being human.</p>
+                    <p>Brian is an Adelaide-based counsellor, supervisor, and educator whose professional background spans many years of counselling, clinical supervision, and training counsellors in higher education. This breadth of experience shapes a practice marked by calm, compassion, and thoughtful reflection. He has worked extensively with individuals and couples navigating anxiety, loss, relationship challenges, life transitions, and the broader complexity of being human.</p>
                     <p>Brian&apos;s approach is informed by Acceptance and Commitment Therapy (ACT) and shaped by a wide range of therapeutic models and perspectives. He works in an integrative and relational way, drawing on what is most helpful for each person and their circumstances. He is particularly interested in helping people develop a different relationship with difficult thoughts and emotions, while discovering they are not bound by the script they have carried and can still move toward a meaningful, hopeful, and values-shaped life.</p>
                     <p>His style is warm, grounded, and attentive, creating a space where people can feel safe, respected, and genuinely met.</p>
                 </section>
@@ -1684,6 +1732,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Brian to book a session:</p>
                     <p>Mobile: <a href="tel:+61412156966">0412 156 966</a><br>Email: <a href="mailto:brian@pivotct.com.au">brian@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1696,7 +1745,7 @@
                 <p class="bio-modal-role">Counsellor</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Wendy combines professional counselling training with over two decades of experience in a vocational ministry household, alongside raising her now adult children. She has walked with people through seasons of joy, loss, transition, and complexity, which shapes her practice and grounds her work in compassion and respect for each person&apos;s story.</p>
+                    <p>Wendy is an Adelaide-based counsellor who combines professional counselling training with more than two decades of experience in a vocational ministry household, while raising her now-adult children. She has walked with people through seasons of joy, loss, transition, and complexity, which shapes her practice and grounds her work in compassion and respect for each person&apos;s story.</p>
                     <p>Wendy works with individuals experiencing stress, anxiety, life transitions, grief and loss, and relationship and parenting concerns. She supports couples as they navigate relationship challenges, intimacy, and a desire for change. She has developed and presented seminars on relationships and parenting locally, interstate and overseas.</p>
                     <p>For clients who desire it, Wendy integrates a Christian worldview alongside evidence-based practice, creating space to explore faith, meaning, and growth in ways that matter to them. She has a particular interest in supporting those navigating the unique pressures of ministry life.</p>
                     <p>Her approach is strengths-based and trauma-informed, drawing on cognitive-behavioural, narrative, and acceptance and commitment therapies. The relationship work is informed by Gottman principles, emotion-focused approaches, developmental models, and family systems frameworks. She enjoys working with clients in ways that foster self-awareness and support meaningful change.</p>
@@ -1737,6 +1786,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Wendy to book a session:</p>
                     <p>Mobile: <a href="tel:+61494002633">0494 002 633</a><br>Email: <a href="mailto:wendy@pivotct.com.au">wendy@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1749,7 +1799,7 @@
                 <p class="bio-modal-role">Counsellor</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Tim&apos;s professional background spans three decades in nursing, supporting adults across diverse settings, including complex health conditions, cardiovascular care, palliative support, and experiences of loss. This foundation continues to inform his counselling practice, grounding his work in compassion, steadiness, and respect for each person&apos;s story.</p>
+                    <p>Tim is an Adelaide-based counsellor whose professional background spans three decades in nursing, supporting adults across diverse settings, including complex health conditions, cardiovascular care, palliative support, and experiences of loss. This foundation continues to inform his counselling practice, grounding his work in compassion, steadiness, and respect for each person&apos;s story.</p>
                     <p>Tim brings lived experience of separation and divorce, allowing him to offer thoughtful, grounded support to those navigating relationship breakdowns, co-parenting, and major life transitions. He also works with clients experiencing anxiety, stress, and grief, helping them make sense of difficult emotions in a safe, non-judgemental space.</p>
                     <p>His approach draws on Acceptance and Commitment Therapy (ACT), Cognitive Behavioural Therapy (CBT), and Emotion-Focused Therapy (EFT), supporting clients to develop greater awareness, respond with flexibility, and move toward what matters most.</p>
                     <p>Tim&apos;s style is calm, collaborative, and practical, creating a supportive space to explore challenges and take meaningful steps forward.</p>
@@ -1787,6 +1837,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Tim to book a session:</p>
                     <p>Mobile: <a href="tel:+61411046414">0411 046 414</a><br>Email: <a href="mailto:tim@pivotct.com.au">tim@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1799,7 +1850,7 @@
                 <p class="bio-modal-role">Counsellor</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Hannah brings a background in Secondary Education and Counselling, specialising in recovery-focused therapies for children, adolescents, and young women. She has worked across residential and outpatient settings, including Australia&apos;s first specialist residential eating disorder treatment centre, Wandi Nerida, and holds ANZAED credentialing, reflecting her commitment to evidence-based, best-practice care.</p>
+                    <p>Hannah is an Adelaide-based counsellor with a background in Secondary Education and Counselling, specialising in recovery-focused therapies for children, adolescents, and young women. She has worked across residential and outpatient settings, including Australia&apos;s first specialist residential eating disorder treatment centre, Wandi Nerida, and holds ANZAED credentialing, reflecting her commitment to evidence-based, best-practice care.</p>
                     <p>Her work is grounded in relational, person-centred, and trauma-informed practice, guided by somatic and creative therapies, Acceptance and Commitment Therapy, Narrative Therapy, and Solution-Focused frameworks. Alongside her therapeutic work, Hannah is passionate about early intervention and prevention, partnering with educators to embed body appreciation and mental health literacy in learning environments.</p>
                     <p>Hannah offers a warm, safe, and practical space, where therapy is guided by each individual. She works collaboratively to explore challenges, develop meaningful strategies, and support reflection, growth, and living a life that feels deeply authentic and fulfilling.</p>
                 </section>
@@ -1843,6 +1894,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Hannah to book a session:</p>
                     <p>Mobile: <a href="tel:+61428466058">0428 466 058</a><br>Email: <a href="mailto:hannah@pivotct.com.au">hannah@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1892,6 +1944,7 @@
                     <h3 class="bio-modal-title">Contact</h3>
                     <p>Please contact Nat to book a session:</p>
                     <p>Mobile: <a href="tel:+61448297863">0448 297 863</a><br>Email: <a href="mailto:nat@pivotct.com.au">nat@pivotct.com.au</a></p>
+                    <p><button class="bio-modal-cta" type="button">Book Now</button></p>
                 </section>
             </div>
         </div>
@@ -1904,7 +1957,7 @@
                 <p class="bio-modal-role">Psychotherapist</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Esther is a Psychotherapist and Mental Health Social Worker who supports adults and young people experiencing anxiety, depression, stress, grief, life transitions, and Single Event PTSD. She is passionate about creating a safe, respectful, and nurturing environment where clients feel understood, heard, and supported and are provided with practical tools to help them on their journey.</p>
+                    <p>Esther is an Adelaide-based Psychotherapist and Accredited Mental Health Social Worker who supports adults and young people experiencing anxiety, depression, stress, grief, life transitions, and single-event PTSD. She is passionate about creating a safe, respectful, and nurturing environment where clients feel understood, heard, and supported and are provided with practical tools to help them on their journey.</p>
                     <p>Her approach is person-centred and integrative, drawing on evidence-informed modalities including Cognitive Behavioural Therapy (CBT), Cognitive Processing Therapy (CPT, accredited), Acceptance and Commitment Therapy (ACT), Dialectical Behavioural Therapy (DBT), Inner Child work, and Parts work. She has also trained in Eye Movement Desensitisation and Reprocessing (EMDR), which she incorporates into her work with clients.</p>
                     <p>Esther has over 20 years&apos; experience working as a Social Worker, supporting families in complex situations. In addition to her work at Pivot, she is a Mental Health Clinician at Headspace, working with a diverse range of young people and families to strengthen relationships, build resilience, and provide practical strategies, tools, and insights into mental health. Esther can offer Medicare rebates through the Medicare Benefit Scheme.</p>
                 </section>
