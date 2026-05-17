@@ -898,29 +898,34 @@
             }
 
             .services-tabs {
-                justify-content: flex-start;
-                overflow-x: auto;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
                 padding-bottom: 4px;
-                scrollbar-width: none;
-            }
-
-            .services-tabs::-webkit-scrollbar {
-                display: none;
             }
 
             .services-tab {
                 flex: 0 0 auto;
                 white-space: nowrap;
+                width: auto;
             }
 
             .services-panel {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
             }
 
             .services-panel-photo {
                 aspect-ratio: auto;
-                min-height: 320px;
+                min-height: 0;
+                max-width: 160px;
+            }
+
+            .services-panel-photo img {
+                width: 100%;
+                height: auto;
+                margin: 0 auto;
             }
 
             .services-panel-copy h3 {
@@ -1154,7 +1159,7 @@
 
         /* ── Typography overrides ── */
         body { font-family: "Source Sans 3", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; line-height: 1.7; }
-        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; line-height: 1.7; }
+        h1, h2, h3, h4, h5, h6 { font-family: "Inter", "Segoe UI", Tahoma, sans-serif !important; line-height: 1.15; }
         h1 { font-size: 34px !important; }
         h2, h3 { font-size: 34px; }
         p { line-height: 1.7; }
@@ -1214,7 +1219,7 @@
             <section class="services-message-section" aria-label="Services message">
                 <div class="services-message-wrap">
                     <div class="services-message-copy">
-                        <h1 class="about-kicker">Welcome to Pivot Counselling &amp; Training</h1>
+                        <h1 class="about-kicker">Welcome to Pivot Counselling and Training</h1>
                         <p>At Pivot Counselling &amp; Training, we offer counselling in a safe, respectful, and supportive environment where you can slow down and make sense of what you are experiencing.</p>
                         <p>We understand that reaching out can feel like a significant step, and our aim is to create a space where you feel heard, understood, and supported.</p>
                         <p>Whether you or a loved one are navigating anxiety, low mood, relationship difficulties, grief, or major life transitions, we work collaboratively with you to find a way forward that feels meaningful and supportive.</p>
@@ -1241,11 +1246,13 @@
                         <div class="services-panels">
                             <article class="services-panel is-active" role="tabpanel" id="topic-anxiety" aria-labelledby="tab-anxiety">
                                 <figure class="services-panel-photo">
-                                    <img src="relationships.svg" alt="Service illustration">
+                                    <img src="brain.svg" alt="Anxiety, stress and trauma illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Anxiety, Stress &amp; Trauma</h3>
-                                    <p>Pivot Counselling is committed to walking with you as you deal with:</p>
+                                    <p>Anxiety, stress, and trauma can affect the way a person thinks, feels, and moves through daily life. At times, the effects can feel obvious and intense. At other times, they may sit quietly in the background, shaping how safe, settled, or steady a person feels.</p>
+                                    <p>These experiences can show up in many ways, including persistent worry, physical tension, panic, feeling constantly on edge, or struggling to switch off. For some people, past or recent trauma can further impact their sense of safety, stability, and well-being.</p>
+                                    <p>Your Pivot counsellor will provide a supportive space to better understand what you are experiencing and work toward greater clarity, resilience, and practical ways forward. This may include support with:</p>
                                     <ul>
                                         <li>Ongoing anxiety or worry</li>
                                         <li>Panic attacks</li>
@@ -1254,13 +1261,11 @@
                                         <li>Difficulty switching off or relaxing</li>
                                         <li>Stress, overwhelm, or burnout</li>
                                     </ul>
-                                    <p>Anxiety, stress, and trauma can affect the way a person thinks, feels, and moves through daily life. At times, the effects can be obvious and intense. At other times, they can sit quietly in the background, shaping how safe, settled, or steady a person feels.</p>
-                                    <p>Anxiety can show up in many ways such as, including persistent worry, physical tension, panic, difficulty sleeping, or a sense of being constantly on edge. For some of us, these experiences are also shaped by past or recent trauma, making it harder to feel settled, safe, or able to switch off.</p>
                                 </div>
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-depression" aria-labelledby="tab-depression" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="relationships.svg" alt="Service illustration">
+                                    <img src="depression.svg" alt="Depression and low mood illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Depression &amp; Low Mood</h3>
@@ -1279,20 +1284,20 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-grief" aria-labelledby="tab-grief" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="relationships.svg" alt="Service illustration">
+                                    <img src="grief.svg" alt="Grief and loss illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Grief &amp; Loss</h3>
-                                    <p>Your Pivot counsellor can support you to make sense of your experience and find a way forward, while honouring what has been lost. This may include:</p>
+                                    <p>Grief can affect every part of life and may show up in many ways, including sadness, numbness, longing, confusion, or a sense of disorientation. At Pivot, we support people navigating the impact of loss, whether through the death of a loved one, relationship breakdowns, or significant life change.</p>
+                                    <p>We recognise that grief is deeply personal and does not follow a fixed timeline. Each person&apos;s experience is unique, and healing often involves learning how to carry loss while adjusting to life in new ways.</p>
+                                    <p>Your Pivot counsellor can provide a supportive space to make sense of your experience and find a way forward while honouring what has been lost. This may include support with:</p>
                                     <ul>
                                         <li>Loss of a loved one</li>
                                         <li>Relationship separation or divorce</li>
-                                        <li>Life transitions (e.g. relocation, career change)</li>
+                                        <li>Life transitions (e.g. relocation or career change)</li>
                                         <li>Feelings of longing, numbness, or disorientation</li>
                                         <li>Adjusting to change and redefining identity</li>
                                     </ul>
-                                    <p>Grief can show up in many ways including sadness, numbness, longing, or a sense of disorientation. At Pivot, we support people navigating the impact of loss, whether through the death of a loved one, relationship breakdown, or significant life change.</p>
-                                    <p>We recognise that grief is deeply personal and does not follow a fixed timeline.</p>
                                 </div>
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-relationships" aria-labelledby="tab-relationships" hidden>
@@ -1316,7 +1321,7 @@
                             </article>
                             <article class="services-panel" role="tabpanel" id="topic-family" aria-labelledby="tab-family" hidden>
                                 <figure class="services-panel-photo">
-                                    <img src="relationships.svg" alt="Service illustration">
+                                    <img src="family.svg" alt="Child, adolescent and family illustration">
                                 </figure>
                                 <div class="services-panel-copy">
                                     <h3>Child, Adolescent &amp; Family</h3>
@@ -1349,8 +1354,8 @@
                             <li>Mental health and wellbeing</li>
                             <li>Acceptance and Commitment Therapy (ACT)</li>
                             <li>Communication and relational health</li>
-                            <li>Psychosocial education</li>
-                            <li>Workplace well-being and team functioning</li>
+                            <li>Psychoeducation</li>
+                            <li>Workplace wellbeing and team functioning</li>
                             <li>Professional development for therapists and helping professionals</li>
                         </ul>
                     </div>
@@ -1376,7 +1381,7 @@
                         </ul>
                     </div>
                     <figure class="services-training-photo">
-                        <img src="DSC09990-2.jpg" alt="Supervision">
+                        <img src="DSC09121.jpg" alt="Supervision">
                     </figure>
                 </div>
             </section>
@@ -1465,6 +1470,8 @@
                         </p>
                         <div class="footer-accreditation">
                             <img class="footer-sa-logo" src="sa.svg" alt="South Australia logo">
+                            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="cc1a39f5-c999-4238-926e-f68044364779" data-share-badge-host="https://www.credly.com"></div>
+                            <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
                         </div>
                     </div>
 
