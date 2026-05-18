@@ -73,13 +73,12 @@
         }
 
         .brand-wordmark {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: inline-block;
             line-height: 0.88;
             font-weight: 300;
             letter-spacing: 0.06em;
             color: var(--brand);
+            padding-bottom: 1.6rem;
         }
 
         .brand-wordmark strong {
@@ -87,10 +86,21 @@
             font-weight: 300;
         }
 
-        .brand-wordmark span {
+        .brand-v {
+            position: relative;
+        }
+
+        .brand-v::after {
+            content: "\25B2";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             margin-top: 4px;
             font-size: 1.35rem;
             line-height: 1;
+            font-weight: 400;
+            letter-spacing: 0;
         }
 
         .brand-copy {
@@ -1067,7 +1077,8 @@
             }
             .brand { flex-direction: row !important; gap: 12px !important; }
             .brand-wordmark strong { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
-            .brand-wordmark span { font-size: 1rem; }
+            .brand-wordmark { padding-bottom: 1.2rem; }
+            .brand-v::after { font-size: 1rem; }
             .brand-copy {
                 font-size: clamp(0.7rem, 2.2vw, 0.86rem);
                 letter-spacing: 0.1em;
@@ -1184,8 +1195,7 @@
         <header class="site-header">
             <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
-                    <strong>PIVOT</strong>
-                    <span>&#9650;</span>
+                    <strong>PI<span class="brand-v">V</span>OT</strong>
                 </div>
                 <div class="brand-copy">Counselling<br>and Training</div>
             </a>

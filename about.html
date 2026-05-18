@@ -73,13 +73,12 @@
         }
 
         .brand-wordmark {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: inline-block;
             line-height: 0.88;
             font-weight: 300;
             letter-spacing: 0.06em;
             color: var(--brand);
+            padding-bottom: 1.6rem;
         }
 
         .brand-wordmark strong {
@@ -87,10 +86,21 @@
             font-weight: 300;
         }
 
-        .brand-wordmark span {
+        .brand-v {
+            position: relative;
+        }
+
+        .brand-v::after {
+            content: "\25B2";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             margin-top: 4px;
             font-size: 1.35rem;
             line-height: 1;
+            font-weight: 400;
+            letter-spacing: 0;
         }
 
         .brand-copy {
@@ -1149,7 +1159,8 @@
             }
             .brand { flex-direction: row !important; gap: 12px !important; }
             .brand-wordmark strong { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
-            .brand-wordmark span { font-size: 1rem; }
+            .brand-wordmark { padding-bottom: 1.2rem; }
+            .brand-v::after { font-size: 1rem; }
             .brand-copy {
                 font-size: clamp(0.7rem, 2.2vw, 0.86rem);
                 letter-spacing: 0.1em;
@@ -1259,8 +1270,7 @@
         <header class="site-header">
             <a class="brand" href="index.html" aria-label="Pivot Counselling and Training home">
                 <div class="brand-wordmark" aria-hidden="true">
-                    <strong>PIVOT</strong>
-                    <span>&#9650;</span>
+                    <strong>PI<span class="brand-v">V</span>OT</strong>
                 </div>
                 <div class="brand-copy">Counselling<br>and Training</div>
             </a>
@@ -1755,7 +1765,7 @@
                 <p class="bio-modal-role">Counsellor</p>
                 <section class="bio-modal-section">
                     <h3 class="bio-modal-title">About</h3>
-                    <p>Nat is an Adelaide-based counsellor available online across Australia. He specialises in grief, trauma, workplace abuse, and trauma recovery, and is passionate about creating a genuinely safe space where clients feel truly heard, respected, and supported.</p>
+                    <p>Nat is an Adelaide-based counsellor offering in-person sessions in Adelaide and online support across Australia. He specialises in grief, trauma, workplace abuse, and trauma recovery, and is passionate about creating a genuinely safe space where clients feel truly heard, respected, and supported.</p>
                     <p>Nat believes the most powerful ingredient in good therapy is the relationship itself. He tailors every aspect of the work to each individual &ndash; their story, pace, goals, and worldview. Whether someone comes from a faith background or not, they are welcome exactly as they are.</p>
                     <p>He works with people navigating grief, trauma, and life overwhelm &ndash; whether stemming from recent workplace stress, relationship difficulties or loss, or deeper roots in childhood experiences &ndash; helping clients build awareness of the impact these experiences have had, and gently supporting them in processing the emotions and pain they are carrying.</p>
                     <p>Nat is also an active researcher, international speaker, and lived experience practitioner in the field of spiritual abuse and religious trauma, supporting those impacted by ecclesiastical harm.</p>
