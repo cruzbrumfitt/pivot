@@ -510,10 +510,17 @@
         @media (max-width: 900px) {
             .services-training-wrap {
                 grid-template-columns: 1fr;
+                min-height: 0;
             }
             .services-training-photo {
+                height: auto;
                 min-height: 280px;
                 order: 2;
+            }
+            .services-training-section + .services-training-section .services-training-copy,
+            .services-training-section + .services-training-section .services-training-photo {
+                grid-column: 1;
+                grid-row: auto;
             }
         }
 
@@ -1348,7 +1355,7 @@
                         <h2>Training</h2>
                         <p>Alongside counselling and supervision, Pivot Counselling and Training offers professional development opportunities in Adelaide designed to strengthen insight, build practical skills, and support healthier ways of relating, working, and responding to challenge.</p>
                         <p>Our workshops and education sessions are thoughtful, engaging, and grounded in professional experience and real-world application. We work with workplaces, schools, community organisations, and practitioner groups, tailoring sessions to the unique needs of each setting.</p>
-                        <p>Areas of focus may include:</p>
+                        <p>Areas of focus can include:</p>
                         <ul>
                             <li>Mental health and wellbeing</li>
                             <li>Acceptance and Commitment Therapy (ACT)</li>
@@ -1370,7 +1377,7 @@
                         <p>Pivot Counselling and Training offers clinical supervision in Adelaide through reflective and professionally supportive spaces where practitioners can engage thoughtfully with their work, their clients, and themselves in the midst of practice. This process can strengthen clinical insight, ethical awareness, resilience, and clarity while supporting sustainable, responsible care.</p>
                         <p>Professional bodies such as PACFA and ACA recognise clinical supervision as an important part of ethical practice, professional development, and practitioner wellbeing. Our supervision services can support practitioners in meeting these professional requirements while also creating space for meaningful reflection and growth.</p>
                         <p>Support is available in both individual and group formats and can be tailored to counsellors, helping professionals, team leaders, and those working in pastoral or organisational settings. Depending on the context, sessions may focus on clinical work, professional identity, team dynamics, ethical decision-making, workplace pressures, or the relational and emotional demands of caregiving roles.</p>
-                        <p>Areas of support may include:</p>
+                        <p>Areas of support can include:</p>
                         <ul>
                             <li>Individual clinical supervision</li>
                             <li>Group supervision</li>
