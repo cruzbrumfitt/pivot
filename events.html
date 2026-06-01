@@ -1094,6 +1094,15 @@
         h2, h3 { font-size: 34px; }
         p { line-height: 1.7; }
     </style>
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2380713');
+    </script>
+    <!-- End MailerLite Universal -->
 </head>
 <body>
     <div class="page-shell">
@@ -1155,12 +1164,14 @@
             <section class="newsletter" aria-labelledby="newsletter-heading">
                 <h2 class="newsletter-title" id="newsletter-heading">Stay connected</h2>
                 <p class="newsletter-copy">Be the first to hear about upcoming events, insights, and updates from Pivot Counselling and Training.</p>
-                <form class="newsletter-form" action="mailto:info@pivotct.com.au" method="post" enctype="text/plain" novalidate>
+                <form class="newsletter-form" action="#" method="post" novalidate>
                     <label class="visually-hidden" for="newsletter-email" style="position:absolute;left:-9999px;">Email address</label>
                     <input class="newsletter-input" id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required>
                     <button class="newsletter-submit" type="submit">Subscribe</button>
                 </form>
                 <p class="newsletter-status" id="newsletter-status" role="status" aria-live="polite"></p>
+                <!-- MailerLite form (hidden) — our custom form above submits through this -->
+                <div id="ml-bridge" class="ml-embedded" data-form="sAOw0N" aria-hidden="true" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;"></div>
             </section>
 
             <section class="faq-section" aria-labelledby="faq-heading">
@@ -1324,6 +1335,10 @@
             if (!form) return;
             var input = form.querySelector('.newsletter-input');
             var status = document.getElementById('newsletter-status');
+            var bridge = document.getElementById('ml-bridge');
+
+            function mlForm() { return bridge ? bridge.querySelector('form') : null; }
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var value = (input.value || '').trim();
@@ -1332,10 +1347,25 @@
                     input.focus();
                     return;
                 }
-                var subject = encodeURIComponent('Newsletter signup');
-                var body = encodeURIComponent('Please add me to the Pivot mailing list:\n\n' + value);
-                window.location.href = 'mailto:info@pivotct.com.au?subject=' + subject + '&body=' + body;
-                status.textContent = 'Thanks! Your email app should open to confirm your signup.';
+                var mlf = mlForm();
+                var mlEmail = mlf && mlf.querySelector('input[type="email"], input[name="fields[email]"]');
+                if (!mlf || !mlEmail) {
+                    status.textContent = 'The signup form is still loading — please try again in a moment.';
+                    return;
+                }
+                // Hand the email to MailerLite's form and let its own handler submit it.
+                mlEmail.value = value;
+                mlEmail.dispatchEvent(new Event('input', { bubbles: true }));
+                mlEmail.dispatchEvent(new Event('change', { bubbles: true }));
+                var mlBtn = mlf.querySelector('button[type="submit"], [type="submit"]');
+                if (mlBtn) {
+                    mlBtn.click();
+                } else if (typeof mlf.requestSubmit === 'function') {
+                    mlf.requestSubmit();
+                } else {
+                    mlf.submit();
+                }
+                status.textContent = 'Thanks! You’re on the list.';
                 form.reset();
             });
         })();
